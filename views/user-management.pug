@@ -1,0 +1,61 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Groceries
+  style.
+    .user-management-container {
+    width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    }
+    .header {
+    text-align: center;
+    margin-bottom: 30px;
+    }
+    #user-table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+    #user-table th, #user-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    }
+    .buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    align-items: center;
+    padding: 20px 20px;
+    }
+    #add-user-button {
+    background-color: #6a0983;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+    #add-user-button:hover {
+    background-color: #45a049;
+    }
+.user-management-container
+  // Header Section
+  h1.header User Management
+  // Table Section
+  table#user-table
+    thead
+      tr
+        th Username
+        th Role
+        th Actions
+    tbody#user-table-body
+      // Rows will be added dynamically
+  // Buttons Section
+  .buttons-container
+    button#add-user-button Add User
+script(src='user-management.js')

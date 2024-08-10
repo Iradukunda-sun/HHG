@@ -1,0 +1,70 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Groceries
+  style.
+    /* reports.css */
+    .reports-container {
+    width: 80%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #reports-form {
+    margin-bottom: 20px;
+    }
+    #report-type {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    #start-date, #end-date {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    }
+    #generate-report {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background-color: #441c4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    #generate-report:hover {
+    background-color: #3e8e41;
+    }
+    #report-output {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+// reports.html
+.reports-container
+  h2 Reports
+  form#reports-form
+    label(for='report-type') Select Report Type:
+    select#report-type(name='report-type')
+      option(value='sales') Sales
+      option(value='stock') Stock
+      option(value='procurement') Procurement
+      option(value='credit-sales') Credit Sales
+    br
+    label(for='date-range') Select Date Range:
+    input#start-date(type='date' name='start-date')
+    input#end-date(type='date' name='end-date')
+    br
+    button#generate-report(type='button') Generate Report
+  #report-output
+script.

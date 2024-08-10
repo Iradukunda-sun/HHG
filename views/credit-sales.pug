@@ -1,0 +1,108 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Groceries
+  style.
+    body {
+    background-image: url();
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+    form {
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #161515;
+    border-radius: 10px;
+    box-shadow: none;
+    background-color: #f0eaf1;
+    }
+    table {
+    width: 100%;
+    }
+    th,
+    td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    }
+    th {
+    background-color: #a5f5a3;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    }
+    button[type="submit"],
+    button[type="reset"] {
+    padding: 10px 30px;
+    margin: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #572150;
+    color: #fff;
+    cursor: pointer;
+    }
+    button[type="submit"]:hover,
+    button[type="reset"]:hover {
+    background-color: #3e8e41;
+    }
+    h2 {
+    text-align: center;
+    }
+form
+  h2 ADD CREDIT SALE
+  table
+    tr
+      td Buyer&apos;s Name:
+      td
+        input#buyersName(type='text' name='buyersName')
+    br
+    tr
+      td National Identification Number:
+      td
+        input#niN(type='text' name='niN')
+    tr
+      td Location:
+      td
+        input#location(type='text' name='location')
+    tr
+      td Contact Info:
+      td
+        input#contactInfo(type='text' name='contactInfo')
+    tr
+      td Amount Due:
+      td
+        input#amountDue(type='number' name='amountDue')
+    tr
+      td  Sales Agent&apos;s Name:
+      td
+        input#salesAgentName(type='text' name='salesAgentName')
+    tr
+      td Due Date:
+      td
+        input#dueDate(type='date' name='dueDate')
+    tr
+      td Produce Name:
+      td
+        input#produceName(type='text' name='produceName')
+    tr
+      td Type:
+      td
+        input#type(type='text' name='type' required='')
+    tr
+      td Tonnage:
+      td
+        input#number(type='number' name='number')
+    tr
+      td  Date of Dispatch:
+      td
+        input#date(type='date' name='date')
+  button#save_button(type='submit') Save
+  button#cancel_button(type='reset') Cancel

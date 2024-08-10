@@ -1,0 +1,34 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Groceries
+  style.
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    }
+    tr.low-stock {
+    background-color: #ffcccc;
+    }
+    h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    }
+h1 View Stock
+table#stock-table
+  thead
+    tr
+      th Produce Name
+      th Type
+      th Current Stock (Tons)
+      th Branch Name
+  tbody#stock-data
+    // data will be rendered here
+script(src='stock.js')

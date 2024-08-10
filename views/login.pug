@@ -1,0 +1,82 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Groceries
+  // <link rel="stylesheet" href="index.html">
+  style.
+    body {
+    background-image: url(loginimage1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    }
+    .container {
+    width: 500px;
+    height: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    }
+    form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    }
+    label {
+    margin-bottom: 10px;
+    }
+    input[type="text"],
+    input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    }
+    input[type="submit"] {
+    background-color: #532a5e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+    input[type="submit"]:hover {
+    background-color: #3e8e41;
+    }
+    #error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    }
+    h1 {
+    color: #e2f3f8;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+h1 HAPPY HOE GROCERIES
+br
+.container
+  form#login-form
+    h2 Login
+    label(for='username') Username:
+    input#username(type='text' name='username')
+    br
+    br
+    label(for='password') Password:
+    input#password(type='password' name='password')
+    br
+    br
+    br
+    input(type='submit' value='Login')
+  p#error-message

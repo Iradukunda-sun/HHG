@@ -1,0 +1,96 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Groceries
+  style.
+    body {
+    background-image: url(procurement.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+    form {
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #161515;
+    border-radius: 10px;
+    box-shadow: none;
+    background-color: #f0eaf1;
+    }
+    table {
+    width: 100%;
+    }
+    th,
+    td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    }
+    th {
+    background-color: #a5f5a3;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    }
+    button[type="submit"],
+    button[type="reset"] {
+    padding: 10px 30px;
+    margin: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #572150;
+    color: #fff;
+    cursor: pointer;
+    }
+    button[type="submit"]:hover,
+    button[type="reset"]:hover {
+    background-color: #3e8e41;
+    }
+    h2 {
+    text-align: center;
+    }
+form
+  h2 PROCUREMENT RECORDS
+  table
+    tr
+      td Produce Name:
+      td
+        input#produce_name(type='text' name='produce_name' required='')
+    tr
+      td Type:
+      td
+        input#type(type='text' name='type' required='')
+    tr
+      td Date:
+      td
+        input#date(type='date' name='date' required='')
+    tr
+      td Tonnage:
+      td
+        input#tonnage(type='number' name='tonnage' required='')
+    tr
+      td Cost:
+      td
+        input#cost(type='number' name='cost' required='')
+    tr
+      td Dealer&apos;s Name:
+      td
+        input#dealers_name(type='text' name='dealers_name' required='')
+    tr
+      td Branch Name:
+      td
+        input#branch_name(type='text' name='branch_name' required='')
+    tr
+      td Contact Info:
+      td
+        input#contact_info(type='text' name='contact_info' required='')
+  button#save_button(type='submit') Save
+  a(href='./dashboard1.html')
+    button#cancel_button(type='reset') Cancel

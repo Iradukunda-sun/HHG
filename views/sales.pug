@@ -1,0 +1,100 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Groceries
+  style.
+    body {
+    background-image: url(sales1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+    form {
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #161515;
+    border-radius: 10px;
+    box-shadow: none;
+    background-color: #f0eaf1;
+    }
+    table {
+    width: 100%;
+    }
+    th,
+    td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    }
+    th {
+    background-color: #a5f5a3;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    }
+    button[type="submit"],
+    button[type="button"] {
+    padding: 10px 30px;
+    margin: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #572150;
+    color: #fff;
+    cursor: pointer;
+    }
+    button[type="submit"]:hover,
+    button[type="button"]:hover {
+    background-color: #3e8e41;
+    }
+    h2 {
+    text-align: center;
+    }
+form
+  h2 ADD SALE
+  table
+    tr
+      td Produce Name:
+      td
+        input#produceName(type='text' name='produceName')
+    br
+    tr
+      td Tonnage Sold:
+      td
+        input#tonnageSold(type='number' name='tonnageSold')
+    br
+    tr
+      td Amount Paid:
+      td
+        input#amountPaid(type='number' name='amountPaid')
+    br
+    tr
+      td  Buyer&apos;s Name:
+      td
+        input#buyersName(type='text' name='buyersName')
+    br
+    tr
+      td  Sales Agent&apos;s Name:
+      td
+        input#salesAgentName(type='text' name='salesAgentName')
+    br
+    tr
+      td Date:
+      td
+        input#date(type='date' name='date')
+    br
+    tr
+      td  Time:
+      td
+        input#time(type='time' name='time')
+  button#save_button(type='submit') Save
+  a(href='/my-html-pages/dashboard1.html')
+    button#cancel_button(type='button') Cancel
+| PASTE YOUR HTML CODE HERE

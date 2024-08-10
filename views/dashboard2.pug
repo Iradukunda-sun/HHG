@@ -1,0 +1,101 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width,initial-scale=1.0')
+  title Groceries
+  // Montserrat Font
+  link(href='https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap' rel='stylesheet')
+  // Material Icons
+  link(href='https://fonts.googleapis.com/icon?family=Material+Icons+Outlined' rel='stylesheet')
+  // Custom CSS
+  link(rel='stylesheet' href='/dashboard/styles.css')
+.grid-container
+  // Header
+  header.header
+    .menu-icon(onclick='openSidebar()')
+      span.material-icons-outlined menu
+    .header-left
+      span.material-icons-outlined search
+    .header-right
+      span.material-icons-outlined notifications
+      span.material-icons-outlined email
+      span.material-icons-outlined account_circle
+  // End Header
+  // Sidebar
+  aside#sidebar
+    .sidebar-title
+      .sidebar-brand
+        span.material-icons-outlined shopping_cart
+        |  STORE
+      span.material-icons-outlined(onclick='closeSidebar()') close
+    ul.sidebar-list
+      li.sidebar-list-item
+        a(href='#' target='_blank')
+          span.material-icons-outlined dashboard
+          |  Dashboard
+      li.sidebar-list-item
+        a(href='#' target='_blank')
+          span.material-icons-outlined inventory_2
+          |  Products
+      li.sidebar-list-item
+        a(href='#' target='_blank')
+          span.material-icons-outlined category
+          |  Categories
+      li.sidebar-list-item
+        a(href='#' target='_blank')
+          span.material-icons-outlined groups
+          |  Customers
+      li.sidebar-list-item
+        a(href='#' target='_blank')
+          span.material-icons-outlined fact_check
+          |  Inventory
+      li.sidebar-list-item
+        a(href='#' target='_blank')
+          span.material-icons-outlined poll
+          |  Reports
+      li.sidebar-list-item
+        a(href='#' target='_blank')
+          span.material-icons-outlined settings
+          |  Settings
+  // End Sidebar
+  // Main
+  main.main-container
+    .main-title
+      h2 DASHBOARD
+    .main-cards
+      .card
+        .card-inner
+          h3 PROCUREMENT
+          span.material-icons-outlined inventory_2
+        a(href='/my-html-pages/procurement.html')
+          button(type='button') ADD
+      .card
+        .card-inner
+          h3 SALES
+          span.material-icons-outlined category
+        a(href='/my-html-pages/sales.html')
+          button(type='button') ADD
+      .card
+        .card-inner
+          h3 CREDIT SALES
+          span.material-icons-outlined groups
+        a(href='/my-html-pages/credit-sales.html')
+          button(type='button') ADD
+      .card
+        .card-inner
+          h3 NOTIFICATIONS
+          span.material-icons-outlined notification_important
+        h1 56
+    .charts
+      .charts-card
+        h2.chart-title Our Products
+        #bar-chart
+      .charts-card
+        h2.chart-title(style='text-align: center;') Procurement and Sales Orders
+        #area-chart
+  // End Main
+// Scripts
+// ApexCharts
+script(src='https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js')
+// Custom JS
+script(src='/dashboard/script.js')
