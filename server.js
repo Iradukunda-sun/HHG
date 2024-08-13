@@ -1,34 +1,42 @@
 //Dependencies
 const express = require('express');
 const path = require('path');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose');
+// const passport = require('passport');
 
-require("dotenv").config();
+// require("dotenv").config();
 
 //Import models
 //Import routes
-const studyRoutes = require("./routes/studyRoutes")
-const salesRoutes = require("./routes/salesRoutes")
+
+const indexRoutes = require("./routes/indexRoutes")
+const loginRoute = require("./routes/loginRoute")
+const dashboard1Routes = require("./routes/dashboard1Routes")
+const procurementRoute = require("./routes/procurementRoute")
+const saleRoute = require("./routes/saleRoute")
+const creditRoutes = require("./routes/creditRoutes")
+const stockRoute = require("./routes/stockRoute")
+const managementRoute = require("./routes/managementRoute")
 
 //Instatiations
 const app = express();
-const port = 3000;
+const port = 3070;
 
 
 //Configurations
 // set db connection to mongoose
-mongoose.connect(process.env.DATABASE_LOCAL, {
-  // useNewUrlParser: true,
-  // useUnifiedTopology: true,
-});
+// mongoose.connect(process.env.DATABASE_LOCAL, {
+//   // useNewUrlParser: true,
+//   // useUnifiedTopology: true,
+// });
 
-mongoose.connection
-  .once("open", () => {
-    console.log("Mongoose connection open");
-  })
-  .on("error", err => {
-    console.error(`Connection error: ${err.message}`);
-  });
+// mongoose.connection
+//   .once("open", () => {
+//     console.log("Mongoose connection open");
+//   })
+//   .on("error", err => {
+//     console.error(`Connection error: ${err.message}`);
+//   });
 
 
 
@@ -46,9 +54,30 @@ app.use(express.static(path.join(__dirname, "public"))); //specify a folder for 
 app.use(express.urlencoded({ extended: true })); //helps to parse data from forms
 app.use(express.json()); //helps to capture data in json format
 
+// // added
+// // express session configs
+// // app.use(expressSession);
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// // passport configs
+// passport.use(Signup.createStrategy());
+// passport.serializeUser(Signup.serializeUser());
+// passport.deserializeUser(Signup.deserializeUser());
+
+
 
 //Routes
 //use routes/use imported routes
+
+app.use("/", indexRoutes);
+app.use("/", loginRoute);
+app.use("/", dashboard1Routes);
+app.use("/", procurementRoute);
+app.use("/", saleRoute);
+app.use("/", creditRoutes);
+app.use("/", stockRoute);
+app.use("/", managementRoute);
 
 
 

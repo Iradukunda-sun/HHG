@@ -56,17 +56,17 @@ head
     h2 {
     text-align: center;
     }
-form
+form(action = '/procurements' method = 'post')
   h2 PROCUREMENT RECORDS
   table
     tr
       td Produce Name:
       td
-        input#produce_name(type='text' name='produce_name' required='')
+        input#cropName(type='text' name='cropName' required='')
     tr
       td Type:
       td
-        input#type(type='text' name='type' required='')
+        input#Type(type='text' name='Type' required='')
     tr
       td Date:
       td
@@ -80,9 +80,9 @@ form
       td
         input#cost(type='number' name='cost' required='')
     tr
-      td Dealer&apos;s Name:
+      td Agent&apos;s Name:
       td
-        input#dealers_name(type='text' name='dealers_name' required='')
+        input#agentName(type='text' name='agentName' required='')
     tr
       td Branch Name:
       td

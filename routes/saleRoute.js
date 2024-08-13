@@ -2,16 +2,16 @@ const express = require('express');
 const router = express.Router();
 
 // Import models
-const Agent = require('../models/agent');
+const Sale = require('../models/mySales');
 
 router.get("/sales", (req, res) => {
-    res.render("sales-agent");
+    res.render("sale");
   });
   
   router.post("/sales", (req, res) => {
-    const salesAgent = new Agent(req.body);
-    salesAgent.save()
-    .then(() => res.redirect('/first'));
+    const hhgSale = new Sale(req.body);
+    hhgSale.save()
+    .then(() => res.redirect('/dashboard101'));
     // console.log(req.body); //prints data to the console terminal
     // res.json(req.body); //returns data on the browser in json format
   });
