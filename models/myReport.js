@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const saleSchema = new mongoose.Schema({
+const reportSchema = new mongoose.Schema({
     start_date: {
         type: Date,
         required: true
@@ -10,3 +10,4 @@ const saleSchema = new mongoose.Schema({
         required: true
     }
 })
+module.exports = mongoose.model('Report', reportSchema);

@@ -53,7 +53,7 @@ head
 // reports.html
 .reports-container
   h2 Reports
-  form#reports-form
+  form#reports-form(action="/report" method="post")
     label(for='report-type') Select Report Type:
     select#report-type(name='report-type')
       option(value='sales') Sales

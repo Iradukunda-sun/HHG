@@ -1,22 +1,32 @@
 //Dependencies
 const express = require('express');
 const path = require('path');
-// const mongoose = require('mongoose');
-// const passport = require('passport');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const expressSession = require('express-session'); ({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false,
 
-// require("dotenv").config();
+});
+require("dotenv").config();
+
 
 //Import models
+const Signup = require('./models/sign')
 //Import routes
 
-const indexRoutes = require("./routes/indexRoutes")
+const landingRoutes = require("./routes/landingRoutes")
+const signupRoutes = require("./routes/signupRoutes")
 const loginRoute = require("./routes/loginRoute")
+
 const dashboard1Routes = require("./routes/dashboard1Routes")
 const procurementRoute = require("./routes/procurementRoute")
 const saleRoute = require("./routes/saleRoute")
 const creditRoutes = require("./routes/creditRoutes")
 const stockRoute = require("./routes/stockRoute")
-const managementRoute = require("./routes/managementRoute")
+const reportRoute = require("./routes/reportRoute")
+
 
 //Instatiations
 const app = express();
@@ -25,18 +35,18 @@ const port = 3070;
 
 //Configurations
 // set db connection to mongoose
-// mongoose.connect(process.env.DATABASE_LOCAL, {
-//   // useNewUrlParser: true,
-//   // useUnifiedTopology: true,
-// });
+mongoose.connect(process.env.DATABASE_LOCAL, {
+  //   // useNewUrlParser: true,
+  //   // useUnifiedTopology: true,
+});
 
-// mongoose.connection
-//   .once("open", () => {
-//     console.log("Mongoose connection open");
-//   })
-//   .on("error", err => {
-//     console.error(`Connection error: ${err.message}`);
-//   });
+mongoose.connection
+  .once("open", () => {
+    console.log("Mongoose connection open");
+  })
+  .on("error", err => {
+    console.error(`Connection error: ${err.message}`);
+  });
 
 
 
@@ -56,28 +66,31 @@ app.use(express.json()); //helps to capture data in json format
 
 // // added
 // // express session configs
-// // app.use(expressSession);
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(expressSession);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // // passport configs
-// passport.use(Signup.createStrategy());
-// passport.serializeUser(Signup.serializeUser());
-// passport.deserializeUser(Signup.deserializeUser());
+passport.use(Signup.createStrategy());
+passport.serializeUser(Signup.serializeUser());
+passport.deserializeUser(Signup.deserializeUser());
 
 
 
 //Routes
 //use routes/use imported routes
 
-app.use("/", indexRoutes);
+app.use("/", landingRoutes);
+app.use("/", signupRoutes);
 app.use("/", loginRoute);
 app.use("/", dashboard1Routes);
 app.use("/", procurementRoute);
 app.use("/", saleRoute);
 app.use("/", creditRoutes);
 app.use("/", stockRoute);
-app.use("/", managementRoute);
+
+app.use("/", reportRoute);
+
 
 
 

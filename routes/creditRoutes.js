@@ -11,7 +11,7 @@ router.get("/credit", (req, res) => {
   router.post("/credit", (req, res) => {
     const creditRecords = new Credit(req.body);
     creditRecords.save()
-    .then(() => res.redirect('/dashboard101'));
+    .then(() => res.redirect('/dashboard1'));
     // console.log(req.body); //prints data to the console terminal
     // res.json(req.body); //returns data on the browser in json format
   });

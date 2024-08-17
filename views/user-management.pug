@@ -50,12 +50,19 @@ head
   table#user-table
     thead
       tr
-        th Username
+        th Name
+        th Branch
         th Role
-        th Actions
     tbody#user-table-body
-      // Rows will be added dynamically
+      if signins.length
+      each signin in signins
+        tr
+          td #{signin.theName}
+          td #{signin.branch}
+          td #{signin.role}
+      else 
+        p No Users Signed up yet
   // Buttons Section
   .buttons-container
-    button#add-user-button Add User
-script(src='user-management.js')
+    button#add-user-button Delete User
+

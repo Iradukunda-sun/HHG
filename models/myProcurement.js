@@ -34,3 +34,4 @@ const procurementSchema = new mongoose.Schema({
         trim: true
     }
 })
+module.exports = mongoose.model('Procurement', procurementSchema);

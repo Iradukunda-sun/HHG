@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Import models
 
 
-router.get("/dashboard2", (req, res) => {
-    res.render("dashboard2");
+router.get("/landing", (req, res) => {
+    res.render("landing",);
   });
   
- 
+  
 
   module.exports = router;

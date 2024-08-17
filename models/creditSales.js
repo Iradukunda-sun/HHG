@@ -48,3 +48,4 @@ const creditsaleSchema = new mongoose.Schema({
    }
     
 })
+module.exports = mongoose.model('Credit', creditsaleSchema);

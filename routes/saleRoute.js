@@ -4,14 +4,14 @@ const router = express.Router();
 // Import models
 const Sale = require('../models/mySales');
 
-router.get("/sales", (req, res) => {
+router.get("/sale", (req, res) => {
     res.render("sale");
   });
   
   router.post("/sales", (req, res) => {
     const hhgSale = new Sale(req.body);
     hhgSale.save()
-    .then(() => res.redirect('/dashboard101'));
+    .then(() => res.redirect('/dashboard1'));
     // console.log(req.body); //prints data to the console terminal
     // res.json(req.body); //returns data on the browser in json format
   });
