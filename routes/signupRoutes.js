@@ -114,15 +114,15 @@ router.post("/updateUser", async (req, res) => {
   }
 });
 
-// delete Produce
-router.post("/deleteUser", async (req, res) => {
-  try {
-    await Signup.deleteOne({ _id: req.body.id });
-    res.redirect("back");
-  } catch (err) {
-    res.status(400).send("Unable to delete user in the database");
-  }
-});
+// // delete Produce
+// router.post("/deleteUser", async (req, res) => {
+//   try {
+//     await Signup.deleteOne({ _id: req.body.id });
+//     res.redirect("back");
+//   } catch (err) {
+//     res.status(400).send("Unable to delete user in the database");
+//   }
+// });
 
 
 module.exports = router;

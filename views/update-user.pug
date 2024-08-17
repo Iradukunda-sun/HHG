@@ -73,10 +73,10 @@ head
     }
 .container
   h2 Sign Up
-  form(action= '/udateUser?id='+signin._id method= 'post')
+  form(action= '/updateUser?id='+signin._id method= 'post')
     .form-group
       label(for='theName') Name:
-      input#name(type='text' name='theName')
+      input#theName(type='text' name='theName' value = signin.theName)
     .form-group
       label(for='email') Email:
       input#email(type='email' name='email')
@@ -87,12 +87,12 @@ head
       label(for='password') Password:
       input#password(type='password' name='password' required='')
     .form-group
-      label(for='branch') Branch:
+      
       select#branch(name='branch')
         option(value='matugga' selected = signin.branch === "matugga") Matugga
         option(value='maganjo' selected = signin.branch === "maganjo") Maganjo
     .form-group
-      label(for='role') Role:
+      
       select#role(name='role')
         option(value='manager' selected = signin.role === "manager") Manager
         option(value='salesagent' selected = signin.role === "salesagent") Sales Agent
@@ -100,4 +100,4 @@ head
       button.btn(type='submit') Sign Up
   p
     | Already have an account? 
-    a(href='/login') log In
+    a(href='/login') Login

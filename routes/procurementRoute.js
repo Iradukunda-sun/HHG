@@ -16,4 +16,56 @@ router.get("/procurement", (req, res) => {
     // res.json(req.body); //returns data on the browser in json format
   });
 
+
+  //Get users from the Database
+router.get("/produceList", async (req, res) => {
+  try {
+    if (req.session.user.role === "manager") {
+      const produceItems = await Procurement.find().sort({ $natural: -1 });
+      res.render("records", {
+        title: "Records",
+        produces: produceItems,
+      });
+    }else {
+      res.send("Only managers can access this page");
+    }
+  } catch (error) {
+    res.status(400).send("Unable to find items in Database");
+
+  }
+});
+
+// get produce update form
+router.get("/updateProduce/:id", async (req, res) => {
+  try {
+    const item = await Procurement.findOne({ _id: req.params.id });
+    res.render("edit-produce", {
+      title: "Update Produce",
+      produce: item,
+    });
+  } catch (err) {
+    res.status(400).send("Unable to find user in the database");
+  }
+});
+
+// post updated produce
+router.post("/updateProduce", async (req, res) => {
+  try {
+    await Signup.findOneAndUpdate({ _id: req.query.id }, req.body);
+    res.redirect("/data");
+  } catch (err) {
+    res.status(404).send("Unable to update user in the database");
+  }
+});
+
+// // delete Produce
+// router.post("/deleteUser", async (req, res) => {
+//   try {
+//     await Signup.deleteOne({ _id: req.body.id });
+//     res.redirect("back");
+//   } catch (err) {
+//     res.status(400).send("Unable to delete user in the database");
+//   }
+// });
+
   module.exports = router;

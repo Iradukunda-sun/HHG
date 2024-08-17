@@ -3,7 +3,7 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Groceries
-  
+  link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')
   style.
     body {
     background-image: url(procurement.jpg);
@@ -57,25 +57,54 @@ head
     h2 {
     text-align: center;
     }
-
-  
-form(action = '/procurement' method = 'post')
+nav.navbar.navbar-expand-lg.bg-body-tertiary
+  .container-fluid
+    a.navbar-brand(href='#')
+      strong HAPPY HOE GROCERIES
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      ul.navbar-nav
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='#') Dashboard
+        li.nav-item
+          a.nav-link(href='#')  Stock Status
+        //
+          <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        //
+          </li>
+          <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+form
   h2 PROCUREMENT RECORDS
+  br
   table
     tr
-      td Produce Name:
-      td
-        input#cropName(type='text' name='cropName' required='')
+      select.form-select(aria-label='Default select example')
+        option(selected='') Select Product
+        option(value='bean') Beans
+        option(value='maize') Maize
+        option(value='cow-peas') Cow peas
+        option(value='g-nuts') G-nuts
+        option(value='rice') Rice
+        option(value='soy') Soy beans
+      //
+        <td>Produce Name:</td>
+        <td><input type="text" id="produce_name" name="produce_name" required></td>
+    br
     tr
-      td Type:
-      td
-        input#Type(type='text' name='Type' required='')
+      select.form-select(aria-label='Default select example')
+        option(selected='') Select Type
+        option(value='grain') Grain
+        option(value='legume') Legume
     tr
       td Date:
       td
         input#date(type='date' name='date' required='')
     tr
-      td Tonnage:
+      td Tonnage in kg:
       td
         input#tonnage(type='number' name='tonnage' required='')
     tr
@@ -83,9 +112,9 @@ form(action = '/procurement' method = 'post')
       td
         input#cost(type='number' name='cost' required='')
     tr
-      td Agent&apos;s Name:
+      td Dealer&apos;s Name:
       td
-        input#agentName(type='text' name='agentName' required='')
+        input#dealers_name(type='text' name='dealers_name' required='')
     tr
       td Branch Name:
       td
@@ -94,6 +123,11 @@ form(action = '/procurement' method = 'post')
       td Contact Info:
       td
         input#contact_info(type='text' name='contact_info' required='')
+    tr
+      td Price to be sold at:
+      td
+        input#branch_name(type='text' name='branch_name' required='')
   button#save_button(type='submit') Save
-  a(href='./dashboard1')
+  a(href='./dashboard1.html')
     button#cancel_button(type='reset') Cancel
+script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

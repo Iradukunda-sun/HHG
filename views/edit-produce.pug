@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')
   style.
     body {
-    background-image: url();
+    background-image: url(procurement.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -78,59 +78,56 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
 form
-  h2 ADD CREDIT SALE
+  h2 PROCUREMENT RECORDS
+  br
   table
     tr
-      td Buyer&apos;s Name:
-      td
-        input#buyersName(type='text' name='buyersName')
-    br
-    tr
-      td National Identification Number:
-      td
-        input#niN(type='text' name='niN')
-    tr
-      td Location:
-      td
-        input#location(type='text' name='location')
-    tr
-      td Contact Info:
-      td
-        input#contactInfo(type='text' name='contactInfo')
-    tr
-      td Amount Due:
-      td
-        input#amountDue(type='number' name='amountDue')
-    tr
-      td  Sales Agent&apos;s Name:
-      td
-        input#salesAgentName(type='text' name='salesAgentName')
-    tr
-      td Due Date:
-      td
-        input#dueDate(type='date' name='dueDate')
-    tr
       select.form-select(aria-label='Default select example')
-        option(selected='') Select Product
+       
         option(value='bean') Beans
         option(value='maize') Maize
         option(value='cow-peas') Cow peas
         option(value='g-nuts') G-nuts
         option(value='rice') Rice
         option(value='soy') Soy beans
+      //
+        <td>Produce Name:</td>
+        <td><input type="text" id="produce_name" name="produce_name" required></td>
+    br
     tr
       select.form-select(aria-label='Default select example')
         option(selected='') Select Type
         option(value='grain') Grain
         option(value='legume') Legume
     tr
-      td Tonnage:
+      td Date:
       td
-        input#number(type='number' name='number')
+        input#date(type='date' name='date' required='')
     tr
-      td  Date of Dispatch:
+      td Tonnage in kg:
       td
-        input#date(type='date' name='date')
+        input#tonnage(type='number' name='tonnage' required='')
+    tr
+      td Cost:
+      td
+        input#cost(type='number' name='cost' required='')
+    tr
+      td Dealer&apos;s Name:
+      td
+        input#dealers_name(type='text' name='dealers_name' required='')
+    tr
+      td Branch Name:
+      td
+        input#branch_name(type='text' name='branch_name' required='')
+    tr
+      td Contact Info:
+      td
+        input#contact_info(type='text' name='contact_info' required='')
+    tr
+      td Price to be sold at:
+      td
+        input#branch_name(type='text' name='branch_name' required='')
   button#save_button(type='submit') Save
-  button#cancel_button(type='reset') Cancel
+  a(href='./dashboard1.html')
+    button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
