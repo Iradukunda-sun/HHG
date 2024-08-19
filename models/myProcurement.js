@@ -32,6 +32,10 @@ const procurementSchema = new mongoose.Schema({
     contact_info: {
         type: String,
         trim: true
+    },
+    saleprice: {
+        type: Number,
+        required: true
     }
 })
 module.exports = mongoose.model('Procurement', procurementSchema);

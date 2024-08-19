@@ -84,7 +84,7 @@ form
     tr
       select.form-select(aria-label='Default select example')
         option(selected='') Select Product
-        option(value='bean') Beans
+        option(value='beans') Beans
         option(value='maize') Maize
         option(value='cow-peas') Cow peas
         option(value='g-nuts') G-nuts
@@ -116,9 +116,10 @@ form
       td
         input#dealers_name(type='text' name='dealers_name' required='')
     tr
-      td Branch Name:
-      td
-        input#branch_name(type='text' name='branch_name' required='')
+      select.form-select(aria-label='Default select example')
+        option(selected='') Select Branch
+        option(value='maganjo') Maganjo
+        option(value='matugga') Matugga
     tr
       td Contact Info:
       td
@@ -126,8 +127,9 @@ form
     tr
       td Price to be sold at:
       td
-        input#branch_name(type='text' name='branch_name' required='')
+        input#saleprice(type='number' name='saleprice' )
+
   button#save_button(type='submit') Save
-  a(href='./dashboard1.html')
+  a(href='./dashboard1')
     button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

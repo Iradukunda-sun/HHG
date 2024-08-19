@@ -16,10 +16,10 @@ require("dotenv").config();
 const Signup = require('./models/sign')
 //Import routes
 
-const landingRoutes = require("./routes/landingRoutes")
+
 const signupRoutes = require("./routes/signupRoutes")
 const loginRoute = require("./routes/loginRoute")
-
+const landingRoutes = require("./routes/landingRoutes")
 const dashboard1Routes = require("./routes/dashboard1Routes")
 const procurementRoute = require("./routes/procurementRoute")
 const saleRoute = require("./routes/saleRoute")

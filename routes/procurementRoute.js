@@ -22,7 +22,7 @@ router.get("/produceList", async (req, res) => {
   try {
     if (req.session.user.role === "manager") {
       const produceItems = await Procurement.find().sort({ $natural: -1 });
-      res.render("records", {
+      res.render("stock", {
         title: "Records",
         produces: produceItems,
       });
@@ -49,23 +49,23 @@ router.get("/updateProduce/:id", async (req, res) => {
 });
 
 // post updated produce
-router.post("/updateProduce", async (req, res) => {
+router.post("/updateProduce ", async (req, res) => {
   try {
     await Signup.findOneAndUpdate({ _id: req.query.id }, req.body);
-    res.redirect("/data");
+    res.redirect("/produceList");
   } catch (err) {
-    res.status(404).send("Unable to update user in the database");
+    res.status(404).send("Unable to update item in the database");
   }
 });
 
 // // delete Produce
-// router.post("/deleteUser", async (req, res) => {
-//   try {
-//     await Signup.deleteOne({ _id: req.body.id });
-//     res.redirect("back");
-//   } catch (err) {
-//     res.status(400).send("Unable to delete user in the database");
-//   }
-// });
+router.post("/deleteProduce", async (req, res) => {
+  try {
+    await Signup.deleteOne({ _id: req.body.id });
+    res.redirect("back");
+  } catch (err) {
+    res.status(400).send("Unable to delete user in the database");
+  }
+});
 
   module.exports = router;

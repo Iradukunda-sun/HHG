@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const saleSchema = new mongoose.Schema({
-    produceName: {
+    cropName: {
         type: String,
         trim: true
     },
-    tonnageSold: {
+    tonnage: {
         type: Number,
         required: true
     },

@@ -87,12 +87,12 @@ head
       label(for='password') Password:
       input#password(type='password' name='password' required='')
     .form-group
-      
+       label(for='branch') Branch:
       select#branch(name='branch')
         option(value='matugga' selected = signin.branch === "matugga") Matugga
         option(value='maganjo' selected = signin.branch === "maganjo") Maganjo
     .form-group
-      
+       label(for='role') Role:
       select#role(name='role')
         option(value='manager' selected = signin.role === "manager") Manager
         option(value='salesagent' selected = signin.role === "salesagent") Sales Agent

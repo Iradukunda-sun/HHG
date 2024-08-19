@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')
   style.
     body {
-    background-image: url(procurement.jpg);
+    background-image: url(sales1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -34,25 +34,26 @@ head
     }
     input[type="text"],
     input[type="number"],
-    input[type="date"] {
+    input[type="date"],
+    input[type="time"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     }
     button[type="submit"],
-    button[type="reset"] {
+    button[type="button"] {
     padding: 10px 30px;
     margin: 20px 20px;
     border: none;
     border-radius: 10px;
-    background-color: #572150;
+    background-color: #c0c4ca;
     color: #fff;
     cursor: pointer;
     }
     button[type="submit"]:hover,
-    button[type="reset"]:hover {
-    background-color: #3e8e41;
+    button[type="button"]:hover {
+    background-color: #0caa88;
     }
     h2 {
     text-align: center;
@@ -77,62 +78,50 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
-form(action='/updateProduce?id='+produce._id method='POST' name= 'editProduce' )
-  h2 PROCUREMENT RECORDS
+form(action='/updateSale?id='+sale._id method='POST' name= 'editSale' )
+  h2 ADD SALE
   br
   table
-    tr
-      select.form-select(aria-label='Default select example')
-         option(selected='') Select  Name
-        option(value='beans' selected = produce.cropName === "beans") Beans
-        option(value='maize' selected = produce.cropName === "maize") Maize
-        option(value='cow-peas' selected = produce.cropName === "cow-peas") Cow peas
-        option(value='g-nuts' selected = produce.cropName === "g-nuts") G-nuts
-        option(value='rice' selected = produce.cropName === "rice") Rice
-        option(value='soy' selected = produce.cropName === "soy") Soy beans
-      //
-        <td>Produce Name:</td>
-        <td><input type="text" id="produce_name" name="produce_name" required></td>
     br
     tr
       select.form-select(aria-label='Default select example')
-        option(selected='') Select Type
-        option(value='grain') Grain
-        option(value='legume') Legume
+        option(selected='') Select Product
+        option(value='beans' selected = sale.cropName === "beans") Beans
+        option(value='maize'  selected = sale.cropName === "maize") Maize
+        option(value='cow-peas'  selected = sale.cropName === "cow- peas") Cow peas
+        option(value='g-nuts' selected = sale.cropName === "g-nuts") G-nuts
+        option(value='rice'  selected = sale.cropName === "rice") Rice
+        option(value='soy'  selected = sale.cropName === "soy") Soy beans
+    tr
+      td Tonnage Sold:
+      td
+        input#tonnage(type='number' name='tonnage' value = sale.tonnage )
+    br
+    tr
+      td Amount Paid:
+      td
+        input#amountPaid(type='number' name='amountPaid' value = sale.amountPaid )
+    br
+    tr
+      td  Buyer&apos;s Name:
+      td
+        input#buyersName(type='text' name='buyersName' value = sale.buyersName )
+    br
+    tr
+      td  Sales Agent&apos;s Name:
+      td
+        input#salesAgentName(type='text' name='salesAgentName')
+    br
     tr
       td Date:
       td
-        input#date(type='date' name='date' value = produce.date )
+        input#date(type='date' name='date' value = sale.date )
+    br
     tr
-      td Tonnage in kg:
+      td  Time:
       td
-        input#tonnage(type='number' name='tonnage' value = produce.tonnage )
-    tr
-      td Cost:
-      td
-        input#cost(type='number' name='cost' value = produce.cost )
-    tr
-      td Dealer&apos;s Name:
-      td
-        input#dealers_name(type='text' name='dealers_name' )
-    tr
-      select.form-select(aria-label='Default select example')
-         option(selected='') Select Branch
-        option(value='maganjo'selected = produce.branch_name === maganjo) Maganjo
-        option(value='legume' selected = produce.branch_name === matugga) Matugga
-
-      
-    tr
-      td Contact Info:
-      td
-        input#contact_info(type='text' name='contact_info' )
-    tr
-      td Price to be sold at:
-      td
-        input#saleprice(type='number' name='saleprice' )
-        
+        input#time(type='time' name='time')
   button#save_button(type='submit') Save
-
-  a(href='./dashboard1.html')
-    button#cancel_button(type='reset') Cancel
+  a(href='/dashboard1')
+    button#cancel_button(type='button') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

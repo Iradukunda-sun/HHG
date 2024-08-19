@@ -59,17 +59,7 @@ router.post("/register", async (req, res) => {
 // }
 // );
 
-// // Logout route
-// router.get("/logout", (req, res) => {
-//   if (req.session) {
-//   req.session.destroy((err) => {
-//   if (err) {
-//   return res.status(500).send("Error logging out");
-//   }
-//   res.redirect("/");
-//   });
-//   }
-//   });
+
 
 
 
@@ -115,14 +105,14 @@ router.post("/updateUser", async (req, res) => {
 });
 
 // // delete Produce
-// router.post("/deleteUser", async (req, res) => {
-//   try {
-//     await Signup.deleteOne({ _id: req.body.id });
-//     res.redirect("back");
-//   } catch (err) {
-//     res.status(400).send("Unable to delete user in the database");
-//   }
-// });
+router.post("/deleteUser", async (req, res) => {
+  try {
+    await Signup.deleteOne({ _id: req.body.id });
+    res.redirect("back");
+  } catch (err) {
+    res.status(400).send("Unable to delete user in the database");
+  }
+});
 
 
 module.exports = router;
