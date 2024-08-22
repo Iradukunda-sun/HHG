@@ -4,8 +4,8 @@ const router = express.Router();
 // Import models
 
 
-router.get("/stocks", (req, res) => {
-    res.render("stock");
+router.get("/records", (req, res) => {
+    res.render("record");
   });
   
   // router.post("/stocks", (req, res) => {

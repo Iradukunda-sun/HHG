@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get("/dashboard1", (req, res) => {
     res.render("dashboard1");
+    
   });
  
 

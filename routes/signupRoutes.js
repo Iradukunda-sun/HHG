@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
       res.redirect("/login");
     });
   } catch (err) {
-    res.status(400).render("signup", { tittle: "Signup" });
+    res.status(400).render("signup", { title: "Signup" });
     console.log("Signup user error", err);
   }
 });

@@ -3,7 +3,8 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const expressSession = require('express-session'); ({
+const moment = require('moment');
+const expressSession = require('express-session') ({
   secret: 'secret',
   resave: false,
   saveUninitialized: false,
@@ -18,26 +19,27 @@ const Signup = require('./models/sign')
 
 
 const signupRoutes = require("./routes/signupRoutes")
-const loginRoute = require("./routes/loginRoute")
+const loginRoutes = require("./routes/loginRoutes")
 const landingRoutes = require("./routes/landingRoutes")
 const dashboard1Routes = require("./routes/dashboard1Routes")
-const procurementRoute = require("./routes/procurementRoute")
-const saleRoute = require("./routes/saleRoute")
+const dashboard2Routes = require("./routes/dashboard2Routes.js")
+const procurementRoutes = require("./routes/procurementRoutes")
+const saleRoutes = require("./routes/saleRoutes")
 const creditRoutes = require("./routes/creditRoutes")
-const stockRoute = require("./routes/stockRoute")
-const reportRoute = require("./routes/reportRoute")
+const stockRoutes = require("./routes/recordRoutes")
+const reportRoutes = require("./routes/reportRoutes")
 
 
 //Instatiations
 const app = express();
-const port = 3070;
+const port = 3000;
 
 
 //Configurations
 // set db connection to mongoose
 mongoose.connect(process.env.DATABASE_LOCAL, {
-  //   // useNewUrlParser: true,
-  //   // useUnifiedTopology: true,
+    // useNewUrlParser: true,
+    // useUnifiedTopology: true,
 });
 
 mongoose.connection
@@ -55,6 +57,7 @@ mongoose.connection
 
 //set the views path
 //set view engine to pug
+app.locals.moment = moment
 app.set('view engine', 'pug');//specify the view engine
 app.set('views', path.join(__dirname, 'views')); //specify the views directory
 
@@ -79,17 +82,20 @@ passport.deserializeUser(Signup.deserializeUser());
 
 //Routes
 //use routes/use imported routes
-
-app.use("/", landingRoutes);
 app.use("/", signupRoutes);
-app.use("/", loginRoute);
-app.use("/", dashboard1Routes);
-app.use("/", procurementRoute);
-app.use("/", saleRoute);
-app.use("/", creditRoutes);
-app.use("/", stockRoute);
+app.use("/", loginRoutes);
+app.use("/", landingRoutes);
 
-app.use("/", reportRoute);
+
+app.use("/", dashboard1Routes);
+
+app.use("/", dashboard2Routes);
+app.use("/", procurementRoutes);
+app.use("/", saleRoutes);
+app.use("/", creditRoutes);
+app.use("/", stockRoutes);
+
+app.use("/", reportRoutes);
 
 
 

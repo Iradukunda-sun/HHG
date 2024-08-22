@@ -21,7 +21,7 @@ const procurementSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    agentName: {
+    dealers_name: {
         type: String,
         trim: true
     },

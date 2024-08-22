@@ -66,9 +66,9 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
     #navbarNav.collapse.navbar-collapse
       ul.navbar-nav
         li.nav-item
-          a.nav-link.active(aria-current='page' href='#') Dashboard
+          a.nav-link.active(aria-current='page' href='/dashboard1') Dashboard
         li.nav-item
-          a.nav-link(href='#')  Stock Status
+          a.nav-link(href='/stock')  Stock Status
         //
           <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
@@ -77,28 +77,32 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
-form
+form(action='/procurement' method='post')
   h2 PROCUREMENT RECORDS
   br
   table
     tr
       select.form-select(aria-label='Default select example')
         option(selected='') Select Product
-        option(value='beans') Beans
-        option(value='maize') Maize
-        option(value='cow-peas') Cow peas
-        option(value='g-nuts') G-nuts
-        option(value='rice') Rice
-        option(value='soy') Soy beans
+        option(value='beans' type='text' name='cropName') Beans
+        option(value='maize' type='text' name='cropName') Maize
+        option(value='cow-peas' type='text' name='cropName') Cow peas
+        option(value='g-nuts' type='text' name='cropName') G-nuts
+        option(value='rice' type='text' name='cropName') Rice
+        option(value='soy' type='text' name='cropName') Soy beans
+       
       //
         <td>Produce Name:</td>
         <td><input type="text" id="produce_name" name="produce_name" required></td>
     br
     tr
       select.form-select(aria-label='Default select example')
+        
         option(selected='') Select Type
-        option(value='grain') Grain
-        option(value='legume') Legume
+        option(value='grain' type='text' name='Type' ) Grain
+        option(value='legume' type='text' name='Type') Legume
+      
+            
     tr
       td Date:
       td
@@ -115,11 +119,15 @@ form
       td Dealer&apos;s Name:
       td
         input#dealers_name(type='text' name='dealers_name' required='')
+
     tr
       select.form-select(aria-label='Default select example')
+      
         option(selected='') Select Branch
-        option(value='maganjo') Maganjo
-        option(value='matugga') Matugga
+        option(value='maganjo' type='text' name='branch_name') Maganjo
+        option(value='matugga' type='text' name='branch_name') Matugga
+       
+          
     tr
       td Contact Info:
       td
