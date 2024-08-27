@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const saleSchema = new mongoose.Schema({
     cropName: {
         type: String,
-        trim: true
+        trim: true,
     },
     tonnage: {
         type: Number,

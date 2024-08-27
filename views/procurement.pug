@@ -82,7 +82,7 @@ form(action='/procurement' method='post')
   br
   table
     tr
-      select.form-select(aria-label='Default select example')
+      select.form-select(aria-label='Default select example'  type='text' name='cropName')
         option(selected='') Select Product
         option(value='beans' type='text' name='cropName') Beans
         option(value='maize' type='text' name='cropName') Maize
@@ -96,7 +96,7 @@ form(action='/procurement' method='post')
         <td><input type="text" id="produce_name" name="produce_name" required></td>
     br
     tr
-      select.form-select(aria-label='Default select example')
+      select.form-select(aria-label='Default select example' type='text' name='Type' )
         
         option(selected='') Select Type
         option(value='grain' type='text' name='Type' ) Grain
@@ -106,22 +106,22 @@ form(action='/procurement' method='post')
     tr
       td Date:
       td
-        input#date(type='date' name='date' required='')
+        input#date(type='date' name='date' )
     tr
       td Tonnage in kg:
       td
-        input#tonnage(type='number' name='tonnage' required='')
+        input#tonnage(type='number' name='tonnage' )
     tr
-      td Cost:
+      td Cost per kg (UGX):
       td
-        input#cost(type='number' name='cost' required='')
+        input#cost(type='number' name='cost')
     tr
       td Dealer&apos;s Name:
       td
-        input#dealers_name(type='text' name='dealers_name' required='')
+        input#dealers_name(type='text' name='dealers_name')
 
     tr
-      select.form-select(aria-label='Default select example')
+      select.form-select(aria-label='Default select example' type='text' name='branch_name')
       
         option(selected='') Select Branch
         option(value='maganjo' type='text' name='branch_name') Maganjo

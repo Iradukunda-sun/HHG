@@ -42,7 +42,7 @@ head
     border: 1px solid #ccc;
     }
     button[type="submit"],
-    button[type="button"] {
+    button[type="reset"] {
     padding: 10px 30px;
     margin: 20px 20px;
     border: none;
@@ -52,7 +52,7 @@ head
     cursor: pointer;
     }
     button[type="submit"]:hover,
-    button[type="button"]:hover {
+    button[type="reset"]:hover {
     background-color: #0caa88;
     }
     h2 {
@@ -67,7 +67,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
     #navbarNav.collapse.navbar-collapse
       ul.navbar-nav
         li.nav-item
-          a.nav-link.active(aria-current='page' href='#') Dashboard
+          a.nav-link.active(aria-current='page' href='/dashboard2') Dashboard
         li.nav-item
           a.nav-link(href='#')  Stock Status
         //
@@ -78,29 +78,28 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
-form
+form(action='/sale' method='post')
   h2 ADD SALE
   br
   table
     br
     tr
-      select.form-select(aria-label='Default select example')
+      select.form-select(aria-label='Default select example' type ='text' name='cropName')
         option(selected='') Select Product
-        option(value='bean') Beans
-        option(value='maize') Maize
-        option(value='cow-peas') Cow peas
-        option(value='g-nuts') G-nuts
-        option(value='rice') Rice
-        option(value='soy') Soy beans
-      td 
-        input#cropName(type='text' name='cropName')  
+        option(value='beans' type='text' name='cropName') Beans
+        option(value='maize' type='text' name='cropName') Maize
+        option(value='cow-peas' type='text' name='cropName') Cow peas
+        option(value='g-nuts' type='text' name='cropName') G-nuts
+        option(value='rice' type='text' name='cropName') Rice
+        option(value='soy' type='text' name='cropName') Soy beans
+        
     tr
-      td Tonnage Sold:
+      td Tonnage Sold: (Kgs)
       td
         input#tonnage(type='number' name='tonnage')
     br
     tr
-      td Amount Paid:
+      td Amount Paid: (UGX)
       td
         input#amountPaid(type='number' name='amountPaid')
     br
@@ -112,7 +111,7 @@ form
     tr
       td  Sales Agent&apos;s Name:
       td
-        input#salesAgentName(type='text' name='salesAgentName')
+        input#agentName(type='text' name='agentName')
     br
     tr
       td Date:
@@ -125,5 +124,5 @@ form
         input#time(type='time' name='time')
   button#save_button(type='submit') Save
   a(href='/dashboard1')
-    button#cancel_button(type='button') Cancel
+    button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

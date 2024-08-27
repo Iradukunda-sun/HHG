@@ -3,7 +3,7 @@ const router = express.Router();
 
 // Import models
 
-router.get("/dashboard1", (req, res) => {
+router.get("/dashboards", (req, res) => {
     res.render("dashboard1");
     
   });

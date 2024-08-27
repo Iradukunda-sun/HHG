@@ -52,40 +52,38 @@ head
           a.nav-link.active(aria-current='page' href='/dashboard1') Dashboard
         li.nav-item
           a.nav-link(href='/stock')  Stock Status
-        li.nav-item
-          a.nav-link(href='/sales_list')  Sales Records
-        li.nav-item
-          a.nav-link(href='/credit-list')  Credit Records
-        
-          
-h1 Procurement
+        //
+          <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        //
+          </li>
+          <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+h1 Sales records
 table#stock-table(action="stock")
   thead
     tr
       th Produce Name
       th Date
-      th Current Stock (Tons)
-      th Cost
-      th Branch Name
+      th Agent Name
       th Action
       th Delete
-     
   tbody
-      if produces.length 
-      each produce in produces 
+      if sales.length 
+      each sale in sales 
         tr 
-          td #{produce.cropName}
-          td #{produce.date}
-          td #{produce.tonnage}
-          td #{produce.cost}
-          td #{produce.branch_name}
+          td #{sale.cropName}
+          td #{sale.date}
+          td #{sale.agentName}
           td 
-            button#update-button(href='/updateProduce/'+produce._id) Update 
-          td
-            form(method ="post" action = '/deleteProduce') 
-              input(type="hidden", placeholder="", name="id", value=produce._id)
+            button#update-button(href='/updateSale/' +sale._id) Update
+          td 
+            form(method ="post" action = '/deleteSale') 
+              input(type="hidden", placeholder="", name="id", value=sale._id)
               button#delete_button(type='submit') Delete 
       else 
-          p No produce yet 
+          p No sale yet 
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
+
 

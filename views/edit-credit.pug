@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')
   style.
     body {
-    background-image: url(sales1.jpg);
+    background-image: url();
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -34,8 +34,7 @@ head
     }
     input[type="text"],
     input[type="number"],
-    input[type="date"],
-    input[type="time"] {
+    input[type="date"] {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -47,13 +46,13 @@ head
     margin: 20px 20px;
     border: none;
     border-radius: 10px;
-    background-color: #c0c4ca;
+    background-color: #572150;
     color: #fff;
     cursor: pointer;
     }
     button[type="submit"]:hover,
     button[type="reset"]:hover {
-    background-color: #0caa88;
+    background-color: #3e8e41;
     }
     h2 {
     text-align: center;
@@ -78,50 +77,60 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
-form(action='/updateSale?id='+sale._id method='POST' name= 'editSale' )
-  h2 ADD SALE
-  br
+form(action='/updateCredit?id='+credit._id method='POST' name= 'editCredit' )
+  h2  CREDIT SALES
   table
-    br
     tr
-      select.form-select(aria-label='Default select example')
-        option(selected='') Select Product
-        option(value='beans' selected = sale.cropName === "beans") Beans
-        option(value='maize'  selected = sale.cropName === "maize") Maize
-        option(value='cow-peas'  selected = sale.cropName === "cow- peas") Cow peas
-        option(value='g-nuts' selected = sale.cropName === "g-nuts") G-nuts
-        option(value='rice'  selected = sale.cropName === "rice") Rice
-        option(value='soy'  selected = sale.cropName === "soy") Soy beans
-    tr
-      td Tonnage Sold:
+      td Buyer&apos;s Name:
       td
-        input#tonnage(type='number' name='tonnage' value = sale.tonnage )
+        input#buyersName(type='text' name='buyersName')
     br
     tr
-      td Amount Paid:
+      td National Identification Number:
       td
-        input#amountPaid(type='number' name='amountPaid' value = sale.amountPaid )
-    br
+        input#niN(type='text' name='niN')
     tr
-      td  Buyer&apos;s Name:
+      td Location:
       td
-        input#buyersName(type='text' name='buyersName' value = sale.buyersName )
-    br
+        input#location(type='text' name='location')
+    tr
+      td Contact Info:
+      td
+        input#contactInfo(type='text' name='contactInfo')
+    tr
+      td Amount Due:
+      td
+        input#amountDue(type='number' name='amountDue')
     tr
       td  Sales Agent&apos;s Name:
       td
-        input#salesAgentName(type='text' name='agentName' value = sale.agentName )
-    br
+        input#salesAgentName(type='text' name='salesAgentName')
     tr
-      td Date:
+      td Due Date:
       td
-        input#date(type='date' name='date' value = sale.date )
-    br
+        input#dueDate(type='date' name='dueDate')
     tr
-      td  Time:
+      select.form-select(aria-label='Default select example')
+        option(selected='') Select Product
+        option(value='beans') Beans
+        option(value='maize') Maize
+        option(value='cow-peas') Cow peas
+        option(value='g-nuts') G-nuts
+        option(value='rice') Rice
+        option(value='soy') Soy beans
+    tr
+      select.form-select(aria-label='Default select example')
+        option(selected='') Select Type
+        option(value='grain') Grain
+        option(value='legume') Legume
+    tr
+      td Tonnage:
       td
-        input#time(type='time' name='time' value = sale.time)
+        input#number(type='number' name='number')
+    tr
+      td  Date of Dispatch:
+      td
+        input#date(type='date' name='date')
   button#save_button(type='submit') Save
-  a(href='/dashboard1')
-    button#cancel_button(type='reset') Cancel
+  button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

@@ -13,7 +13,7 @@ router.post("/procurement", async (req, res) => {
   try {
     const myProduce = new Procurement(req.body);
     await myProduce.save();
-    res.redirect('/dashboard1');
+    res.redirect('/dashboardm');
   } catch (error) {
     res.status(404).send("Unable to save produce")
     console.log("Eroor saving produce", error);
