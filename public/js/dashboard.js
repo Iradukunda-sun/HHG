@@ -23,7 +23,16 @@ function closeSidebar() {
 const barChartOptions = {
   series: [
     {
-      data: [10, 8, 6, 4, 2],
+      data: [ 
+        // 10, 8, 6, 4, 2
+        totalbeans.stockQuantity,
+        totalmaize.stockQuantity,
+        totalcowpeas.stockQuantity,
+        totalgnuts.stockQuantity,
+        totalrice.stockQuantity,
+        totalsoybeans.stockQuantity,
+        
+      ],
       name: 'Products',
     },
   ],

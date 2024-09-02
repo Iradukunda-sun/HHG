@@ -87,9 +87,9 @@ router.post("/updateProduce", async (req, res) => {
 
 // AGGREGATIONS
 
-router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
-  req.session.user = req.user;
-  if (req.user.role == 'manager') {
+router.get("/stock",  async (req, res) => {
+  // req.session.user = req.user;
+  // if (req.user.role == 'manager') {
     try {
 
       // instantiate a crop variable you will use to select a crop.
@@ -97,7 +97,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
       if (req.query.searchProduce)
         selectedProduce = req.query.searchProduce
       // Query for returning all tonnage and revenue of a produce
-      let items = await Produce.find({ cropName: selectedProduce });
+      let items = await Procurement.find({ cropName: selectedProduce });
 
       // console.log("products from the db", goods)
       // console.log("products from the db after search", items)
@@ -108,7 +108,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: "$totalCost" }, // or as below
+            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
             // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
             totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
@@ -121,7 +121,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: "$totalCost" },
+            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } },
             totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
 
 
@@ -134,7 +134,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: "$totalCost" }, // or as below
+            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
             // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
             totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
@@ -147,7 +147,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: "$totalCost" }, // or as below
+            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
             // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
             totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
@@ -160,7 +160,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: "$totalCost" }, // or as below
+            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
             // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
             totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
@@ -173,7 +173,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: "$totalCost" }, // or as below
+            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
             // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
             totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
@@ -187,7 +187,7 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
           $group: {
             _id: "$cropName",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: "$totalCost" },
+            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } },
             totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
         }
@@ -202,15 +202,15 @@ router.get("/", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
         totalsoy: totalSoy[0],
         totalgnuts: totalGnuts[0],
         totalcowpeas: totalCowpeas[0],
-         totalcrop: totalCrop[0],
+        totalcrop: totalCrop[0],
       });
     } catch (error) {
       res.status(400).send("unable to find items in the database");
       console.log(error)
     }
-  } else {
-    res.send("This page is only accessed by managers")
-  }
+  // } else {
+  //   res.send("This page is only accessed by managers")
+  // }
 });
 
 

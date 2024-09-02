@@ -42,25 +42,25 @@ head
   .card-grid
     .card
       h2 Beans
-      img(src='/images/redbeans.png' alt='redbeans')
-      p Current Stock: 500 kg
+      img(src='/img/redbeans.png' alt='redbeans')
+      p Current Stock: #{new Intl.NumberFormat().format(totalbeans.stockQuantity)} Kg
     .card
       h2 Maize
-      img(src='/images/maize.png' alt='maize')
-      p Current Stock: 2000 kg
+      img(src='/img/maize.png' alt='maize')
+      p Current Stock: #{new Intl.NumberFormat().format(totalmaize.stockQuantity)} Kg
     .card
       h2 Rice
-      img(src='/images/rice.png' alt='rice')
-      p Current Stock: 1500 kg
+      img(src='/img/rice.png' alt='rice')
+      p Current Stock: #{new Intl.NumberFormat().format(totalrice.stockQuantity)} Kg
     .card
       h2 Soybeans
-      img(src='/images/soy.png' alt='soybeans')
-      p Current Stock: 800 kg
+      img(src='/img/soy.png' alt='soybeans')
+      p Current Stock: #{new Intl.NumberFormat().format(totalsoy.stockQuantity)} Kg
     .card
       h2 Cow Peas
-      img(src='/images/cowpeas.png' alt='cowpeas')
-      p Current Stock: 300 kg
+      img(src='/img/cowpeas.png' alt='cowpeas')
+      p Current Stock: #{new Intl.NumberFormat().format(totalcowpeas.stockQuantity)} Kg
     .card
       h2 Gnuts
-      img(src='/images/g-nuts.png' alt='gnuts')
-      p Current Stock: 1000 kg
+      img(src='/img/g-nuts.png' alt='gnuts')
+      p Current Stock: #{new Intl.NumberFormat().format(totalgnuts.stockQuantity)} Kg
