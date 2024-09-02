@@ -110,16 +110,16 @@ form(action='/updateCredit?id='+credit._id method='POST' name= 'editCredit' )
       td
         input#dueDate(type='date' name='dueDate')
     tr
-      select.form-select(aria-label='Default select example')
+      select.form-select(aria-label='Default select example' type='text' name='cropName')
         option(selected='') Select Product
-        option(value='beans') Beans
-        option(value='maize') Maize
-        option(value='cow-peas') Cow peas
-        option(value='g-nuts') G-nuts
-        option(value='rice') Rice
-        option(value='soy') Soy beans
+        option(value='beans' selected = credit.cropName === "beans") Beans
+        option(value='maize' selected = credit.cropName === "maize") Maize
+        option(value='cow-peas' selected = credit.cropName === "cow-peas") Cow peas
+        option(value='g-nuts' selected = credit.cropName === "g-nuts") G-nuts
+        option(value='rice' selected = credit.cropName === "rice") Rice
+        option(value='soy' selected = credit.cropName === "soy") Soy beans
     tr
-      select.form-select(aria-label='Default select example')
+      select.form-select(aria-label='Default select example' type='text' name='Type')
         option(selected='') Select Type
         option(value='grain') Grain
         option(value='legume') Legume

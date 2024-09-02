@@ -1,0 +1,66 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  style.
+    css
+    .stock-page {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    }
+    .card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    }
+    .card h2 {
+    margin-top: 0;
+    }
+    .card p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+    }
+    h1 {
+    text-align: center;
+    }
+.stock-page
+  h1 STOCK
+  .card-grid
+    .card
+      h2 Beans
+      img(src='/images/redbeans.png' alt='redbeans')
+      p Current Stock: 500 kg
+    .card
+      h2 Maize
+      img(src='/images/maize.png' alt='maize')
+      p Current Stock: 2000 kg
+    .card
+      h2 Rice
+      img(src='/images/rice.png' alt='rice')
+      p Current Stock: 1500 kg
+    .card
+      h2 Soybeans
+      img(src='/images/soy.png' alt='soybeans')
+      p Current Stock: 800 kg
+    .card
+      h2 Cow Peas
+      img(src='/images/cowpeas.png' alt='cowpeas')
+      p Current Stock: 300 kg
+    .card
+      h2 Gnuts
+      img(src='/images/g-nuts.png' alt='gnuts')
+      p Current Stock: 1000 kg

@@ -29,7 +29,7 @@ const creditsaleSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    produceName: {
+    cropName: {
         type: String,
         trim: true
     },
@@ -40,7 +40,7 @@ const creditsaleSchema = new mongoose.Schema({
     
     tonnage: {
         type: Number,
-        required: true
+        trim: true
     },
    date: {
     type: Date,

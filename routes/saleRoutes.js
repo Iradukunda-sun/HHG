@@ -28,6 +28,10 @@ router.post("/sale", async (req, res) => {
   // console.log(req.body); //prints data to the console terminal
   // res.json(req.body); //returns data on the browser in json format
 });
+//function to format date
+function formatDate(date) {
+  return date.toISOString().split("T")[0];
+}
 
 
 //Get users from the Database
@@ -92,6 +96,25 @@ router.post("/deleteSale", async (req, res) => {
     res.redirect("back");
   } catch (err) {
     res.status(400).send("Unable to delete item in the database");
+  }
+});
+
+//generating a receipt
+
+router.get("/receipt/:id", async (req, res) => {
+  try {
+    const sale = await Sale.findOne({ _id: req.params.id })
+    .populate("cropName","cropName"
+
+    )
+    const formattedDate = formatDate(sale.saledate);
+    res.render("receipt", { 
+      sale,
+      formattedDate,
+      title: "Sale Receipt"
+     });
+  } catch (err) {
+    res.status(400).send("Unable to item sale in the database");
   }
 });
 
