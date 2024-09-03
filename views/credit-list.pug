@@ -81,7 +81,7 @@ table#stock-table(action="stock")
           td #{credit.dueDate}
           td #{credit.salesAgentName}
           td 
-            button#update-button(href='/updateCredit/' +credit._id) Update
+            a#update-button(href='/updateCredit/' +credit._id) Update
           td 
             form(method ="post" action = '/deleteCredit') 
               input(type="hidden", placeholder="", name="id", value=credit._id)

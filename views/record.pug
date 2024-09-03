@@ -80,7 +80,7 @@ table#stock-table(action="stock")
           td #{produce.cost}
           td #{produce.branch_name}
           td 
-            button#update-button(href='/updateProduce/'+produce._id) Update 
+            a#update-button(href='/updateProduce/'+produce._id) Update 
           td
             form(method ="post" action = '/deleteProduce') 
               input(type="hidden", placeholder="", name="id", value=produce._id)

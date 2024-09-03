@@ -112,17 +112,17 @@ form(action='/credit' method='post')
     tr
       select.form-select(aria-label='Default select example' type='text' name='cropName')
         option(selected='') Select Product
-        option(value='bean') Beans
-        option(value='maize') Maize
-        option(value='cow-peas') Cow peas
-        option(value='g-nuts') G-nuts
-        option(value='rice') Rice
-        option(value='soy') Soy beans
+        option(value='beans' type='text' name='cropName') Beans
+        option(value='maize'  type='text' name='cropName') Maize
+        option(value='cow-peas'  type='text' name='cropName') Cow peas
+        option(value='g-nuts'  type='text' name='cropName') G-nuts
+        option(value='rice'  type='text' name='cropName') Rice
+        option(value='soy'  type='text' name='cropName') Soy beans
     tr
       select.form-select(aria-label='Default select example' type='text' name='Type')
         option(selected='') Select Type
-        option(value='grain') Grain
-        option(value='legume') Legume
+        option(value='grain' type='text' name='Type') Grain
+        option(value='legume' type='text' name='Type') Legume
     tr
       td Tonnage:
       td

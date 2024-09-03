@@ -56,23 +56,23 @@ router.get("/updateProduce/:id", async (req, res) => {
 });
 
 
-router.get("/updateProduce/:id", async (req, res) => {
-  try {
-    const item = await Procurement.findOne({ _id: req.params.id });
-    res.render("edit-produce", {
-      title: "Update Produce",
-      produce: item,
-    })
-  } catch (err) {
-    res.status(404).send("Unable to update items");
-  }
-});
+// router.get("/updateProduce/:id", async (req, res) => {
+//   try {
+//     const item = await Procurement.findOne({ _id: req.params.id });
+//     res.render("edit-produce", {
+//       title: "Update Produce",
+//       produce: item,
+//     })
+//   } catch (err) {
+//     res.status(404).send("Unable to update items");
+//   }
+// });
 
 // post updated produce
 
 router.post("/updateProduce", async (req, res) => {
   try {
-    await Procurement.findOneAndUpdate({ _id: req.params.id }, req.body);
+    await Procurement.findOneAndUpdate({ _id: req.query.id }, req.body);
     res.redirect("/produceList");
   } catch (err) {
     res.status(404).send("Unable to update item in the database");
@@ -197,7 +197,7 @@ router.get("/stock",  async (req, res) => {
         title: 'Stock',
         produces: items,
         totalbeans: totalBeans[0],
-        totallegumes: totalMaize[0],
+        totalmaize: totalMaize[0],
         totalrice: totalRice[0],
         totalsoy: totalSoy[0],
         totalgnuts: totalGnuts[0],

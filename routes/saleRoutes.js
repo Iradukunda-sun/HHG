@@ -34,7 +34,7 @@ function formatDate(date) {
 }
 
 
-//Get users from the Database
+//Get sales from the Database
 router.get("/saleList", async (req, res) => {
   try {
 
@@ -52,7 +52,7 @@ router.get("/saleList", async (req, res) => {
 }
 });
 
-// get produce update form
+// get sale update form
 router.get("/updateSale/:id", async (req, res) => {
   try {
     const item = await Sale.findOne({ _id: req.params.id });
@@ -66,17 +66,17 @@ router.get("/updateSale/:id", async (req, res) => {
 });
 
 
-router.get("/updateSale/:id", async (req, res) => {
-  try {
-    const item = await Sale.findOne({ _id: req.params.id });
-    res.render("edit-sale", {
-      title: "Update Sale",
-      sale: item,
-    })
-  } catch (err) {
-    res.status(404).send("Unable to update items");
-  }
-});
+// router.get("/updateSale/:id", async (req, res) => {
+//   try {
+//     const item = await Sale.findOne({ _id: req.params.id });
+//     res.render("edit-sale", {
+//       title: "Update Sale",
+//       sale: item,
+//     })
+//   } catch (err) {
+//     res.status(404).send("Unable to update items");
+//   }
+// });
 
 // post updated produce
 

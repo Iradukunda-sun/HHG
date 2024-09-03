@@ -83,7 +83,7 @@ form(action='/updateProduce?id='+produce._id method='POST' name= 'editProduce' )
   table
     tr
       select.form-select(aria-label='Default select example')
-         option(selected='') Select  Name
+        option(selected='') Select  Name
         option(value='beans' selected = produce.cropName === "beans") Beans
         option(value='maize' selected = produce.cropName === "maize") Maize
         option(value='cow-peas' selected = produce.cropName === "cow-peas") Cow peas
@@ -117,8 +117,8 @@ form(action='/updateProduce?id='+produce._id method='POST' name= 'editProduce' )
         input#dealers_name(type='text' name='dealers_name' )
     tr
       select.form-select(aria-label='Default select example')
-         option(selected='') Select Branch
-        option(value='maganjo'selected = produce.branch_name === maganjo) Maganjo
+        option(selected='') Select Branch
+        option(value='maganjo' selected = produce.branch_name === maganjo) Maganjo
         option(value='legume' selected = produce.branch_name === matugga) Matugga
 
       
@@ -133,6 +133,6 @@ form(action='/updateProduce?id='+produce._id method='POST' name= 'editProduce' )
         
   button#save_button(type='submit') Save
 
-  a(href='./dashboard1.html')
+  a(href='/dashboardm')
     button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

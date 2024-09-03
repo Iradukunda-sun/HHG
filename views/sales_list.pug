@@ -77,7 +77,7 @@ table#stock-table(action="stock")
           td #{sale.date}
           td #{sale.agentName}
           td 
-            button#update-button(href='/updateSale/'+sale._id) Update
+            a#update-button(href='/updateSale/'+sale._id) Update
           td 
             form(method ="post" action = '/deleteSale') 
               input(type="hidden", placeholder="", name="id", value=sale._id)
