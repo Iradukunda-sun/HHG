@@ -6,7 +6,7 @@ head
   link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')
   style.
     body {
-    background-image: url();
+    background-image: url(/img/landing2.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -83,32 +83,32 @@ form(action='/updateCredit?id='+credit._id method='POST' name= 'editCredit' )
     tr
       td Buyer&apos;s Name:
       td
-        input#buyersName(type='text' name='buyersName')
+        input#buyersName(type='text' name='buyersName' value = credit.buyersName) 
     br
     tr
       td National Identification Number:
       td
-        input#niN(type='text' name='niN')
+        input#niN(type='text' name='niN' value = credit.niN) 
     tr
       td Location:
       td
-        input#location(type='text' name='location')
+        input#location(type='text' name='location' value = credit.location)
     tr
       td Contact Info:
       td
-        input#contactInfo(type='text' name='contactInfo')
+        input#contactInfo(type='text' name='contactInfo' value = credit.contactInfo) 
     tr
       td Amount Due:
       td
-        input#amountDue(type='number' name='amountDue')
+        input#amountDue(type='number' name='amountDue' value = credit.amountDue) 
     tr
       td  Sales Agent&apos;s Name:
       td
-        input#salesAgentName(type='text' name='salesAgentName')
+        input#salesAgentName(type='text' name='salesAgentName' value = credit.salesAgentName)
     tr
       td Due Date:
       td
-        input#dueDate(type='date' name='dueDate')
+        input#dueDate(type='date' name='dueDate' value = credit.dueDate)
     tr
       select.form-select(aria-label='Default select example' type='text' name='cropName')
         option(selected='') Select Product
@@ -126,11 +126,11 @@ form(action='/updateCredit?id='+credit._id method='POST' name= 'editCredit' )
     tr
       td Tonnage:
       td
-        input#number(type='number' name='number')
+        input#number(type='number' name='tonnage' value = credit.tonnage) 
     tr
       td  Date of Dispatch:
       td
         input#date(type='date' name='date')
-  button#save_button(type='submit') Save
+  button#save_button(type='submit') Update
   button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

@@ -11,7 +11,7 @@ router.get("/credit", (req, res) => {
     try {
       const myCredit = new Credit(req.body);
       await myCredit.save();
-      res.redirect('/dashboardm');
+      res.redirect('/creditList');
     } catch (error) {
       res.status(404).send("Unable to save sale")
       console.log("Error saving sale", error);
@@ -53,24 +53,11 @@ router.get("/credit", (req, res) => {
     }
   });
   
-  
-  router.get("/updateCredit/:id", async (req, res) => {
-    try {
-      const item = await Credit.findOne({ _id: req.params.id });
-      res.render("edit-credit", {
-        title: "Update credit-sale",
-        credit: item,
-      })
-    } catch (err) {
-      res.status(404).send("Unable to update items");
-    }
-  });
-  
   // post updated produce
   
   router.post("/updateCredit", async (req, res) => {
     try {
-      await Credit.findOneAndUpdate({ _id: req.params.id }, req.body);
+      await Credit.findOneAndUpdate({ _id: req.query.id }, req.body);
       res.redirect("/creditList");
     } catch (err) {
       res.status(404).send("Unable to update item in the database");

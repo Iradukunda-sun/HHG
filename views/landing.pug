@@ -10,20 +10,19 @@ head
     font-family: Arial, sans-serif;
     }
     /* Basic body styles */
-    body {
+     body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
-    color: #1c191d;
-    background-image: url(/img/landing2.jpg);
+    background-image: url(/img/landing2.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     }
     /* Header styles */
     header {
@@ -69,13 +68,21 @@ head
     font-size: 1.2rem;
     color: #555;
     }
+    .icon {
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    align-content: center;
+    padding-left: 150px;
+    }
 header
   .logo
-    h1 Happy Hoe Grocery Ltd.
+    h1 HHG  
   .buttons
     a.btn(href='/login') Login
     a.btn(href='/register') Sign Up
     a.btn(href='/stock') View Stock
 main
+  img.icon(src='/img/logo7.png' alt='icon')
   .hero-section
     h2 Welcome to Happy Hoe Grocery Ltd.

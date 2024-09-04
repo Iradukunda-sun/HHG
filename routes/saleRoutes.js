@@ -82,7 +82,7 @@ router.get("/updateSale/:id", async (req, res) => {
 
 router.post("/updateSale", async (req, res) => {
   try {
-    await Sale.findOneAndUpdate({ _id: req.params.id }, req.body);
+    await Sale.findOneAndUpdate({ _id: req.query.id }, req.body);
     res.redirect("/saleList");
   } catch (err) {
     res.status(404).send("Unable to update item in the database");
