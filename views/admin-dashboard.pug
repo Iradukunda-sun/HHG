@@ -37,32 +37,31 @@ head
           span.material-icons-outlined dashboard
           |  Dashboard
       li.sidebar-list-item
-        a(href='#' target='_blank')
+        a(href='/stock' target='_blank')
           span.material-icons-outlined inventory_2
           |  Inventory
       //
         <li class="sidebar-list-item">
         <a href="#" target="_blank">
         <span class="material-icons-outlined">category</span> Categories
+      //
         </a>
         </li>
-      //
-        <li class="sidebar-list-item">
-        <a href="#" target="_blank">
-        <span class="material-icons-outlined">groups</span> Customers
-        </a>
+      li.sidebar-list-item
+        a(href='/data' target='_blank')
+          span.material-icons-outlined groups
+          |  User Management
       li.sidebar-list-item
         a(href='/produceList' target='_blank')
           span.material-icons-outlined fact_check
-          | Procurement Records
+          |  Procurement Records
       li.sidebar-list-item
-        a(href='#')
+        a(href='#' target='_blank')
           span.material-icons-outlined poll
           |  Reports
       li.sidebar-list-item
-        a(href='#' target='_blank')
+        a(href='/landing' target='_blank')
           span
-        a(href='/landing')  
           |  Log out
   // End Sidebar
   // Main
@@ -74,8 +73,8 @@ head
         .card-inner
           h3 PROCUREMENT
           span.material-icons-outlined inventory_2
-        a(href='/procurement')
-          button(type='button') ADD
+        a(href='/produceList')
+          button(type='button') VIEW
       .card
         .card-inner
           h3 SALES
@@ -86,8 +85,8 @@ head
         .card-inner
           h3 CREDIT SALES
           span.material-icons-outlined groups
-        a(href='/credit')
-          button(type='button') ADD
+        a(href='/creditList')
+          button(type='button') VIEW
       .card
         .card-inner
           h3 NOTIFICATIONS
@@ -95,10 +94,10 @@ head
         h1 56
     .charts
       .charts-card
-        h2.chart-title Top 5 Products
+        h2.chart-title Our Products
         #bar-chart
       .charts-card
-        h2.chart-title(style='text-align: center;') Procurement and Sales Orders
+        h2.chart-title(style='text-align: center;') Procurement and Sales Records
         #area-chart
   // End Main
 // Scripts

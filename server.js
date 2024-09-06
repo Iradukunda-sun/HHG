@@ -21,6 +21,7 @@ const Signup = require('./models/sign')
 const signupRoutes = require("./routes/signupRoutes")
 const loginRoutes = require("./routes/loginRoutes")
 const landingRoutes = require("./routes/landingRoutes")
+const admindashboardRoutes = require("./routes/admindashboardRoutes")
 const dashboard1Routes = require("./routes/dashboard1Routes")
 const dashboard2Routes = require("./routes/dashboard2Routes.js")
 const procurementRoutes = require("./routes/procurementRoutes")
@@ -85,16 +86,13 @@ passport.deserializeUser(Signup.deserializeUser());
 app.use("/", signupRoutes);
 app.use("/", loginRoutes);
 app.use("/", landingRoutes);
-
-
+app.use("/", admindashboardRoutes); //admin
 app.use("/", dashboard1Routes);
-
 app.use("/", dashboard2Routes);
 app.use("/", procurementRoutes);
 app.use("/", saleRoutes);
 app.use("/", creditRoutes);
 app.use("/", stockRoutes);
-
 app.use("/", reportRoutes);
 
 

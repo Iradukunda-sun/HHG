@@ -66,7 +66,7 @@ router.post("/register", async (req, res) => {
 //Get users from the Database
 router.get("/data", async (req, res) => {
   try {
-    if (req.session.user.role === "manager") {
+    if (req.session.user.role === "manager"  ||  req.session.user.role === "administrator") {
       const theUsers = await Signup.find().sort({ $natural: -1 });
       res.render("user-management", {
         title: "Users",

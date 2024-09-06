@@ -19,7 +19,7 @@ router.post("/sale", async (req, res) => {
   try {
     const mySale = new Sale(req.body);
     await mySale.save();
-    res.redirect('/dashboardm');
+    res.redirect('/salesList');
   } catch (error) {
     res.status(404).send("Unable to save sale")
     console.log("Error saving sale", error);
