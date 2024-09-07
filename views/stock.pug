@@ -35,11 +35,29 @@ head
     font-weight: bold;
     color: #666;
     }
+     #back-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    }
+
+    #back-button svg {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #back-button:hover svg {
+      transform: translateX(-2px);
+    }
     h1 {
     text-align: center;
     }
 .stock-page
-  h1 STOCK
+  button#back-button(title='Go back')
+    svg(width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2')
+      path(d='M15 19l-7-7 7-7')
+
+  h1  AVAILABLE STOCK
   .card-grid
     .card
       h2 Beans
@@ -65,3 +83,4 @@ head
       h2 Gnuts
       img(src='/img/g-nuts.png' alt='gnuts')
       p Current Stock: #{new Intl.NumberFormat().format(totalgnuts.stockQuantity)} Kg
+script(src='/js/stock.js')
