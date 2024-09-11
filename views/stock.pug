@@ -62,7 +62,7 @@ head
     .card
       h2 Beans
       img(src='/img/redbeans.png' alt='redbeans')
-      p Current Stock: #{new Intl.NumberFormat().format(totalbeans.stockQuantity)} Kg
+      p Current Stock: #{new Intl.NumberFormat().format(totalbeans.stockQuantity - soldBeans)} Kg
     .card
       h2 Maize
       img(src='/img/maize.png' alt='maize')

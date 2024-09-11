@@ -4,6 +4,7 @@ const connectEnsureLogin = require('connect-ensure-login');
 
 // Import models
 const Procurement = require('../models/myProcurement');
+const Sale = require('../models/mySales');
 
 router.get("/procurement", (req, res) => {
   res.render("procurement", { title: "Procurement" });
@@ -114,7 +115,11 @@ router.get("/stock",  async (req, res) => {
           }
         }
       ])
+      let soldBeans = await Sale.aggregate([
+        {$match : { cropName: "beans"}},
+        {$group : {_id: "$all", totalSold: {$sum : "$tonnage"}}},
 
+      ])
       let totalMaize = await Procurement.aggregate([
         { $match: { cropName: 'maize' } },
         {
@@ -202,6 +207,8 @@ router.get("/stock",  async (req, res) => {
         totalgnuts: totalGnuts[0],
         totalcowpeas: totalCowpeas[0],
         totalcrop: totalCrop[0],
+        soldBeans: soldBeans[0],
+  
       });
     } catch (error) {
       res.status(400).send("unable to find items in the database");

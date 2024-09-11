@@ -29,13 +29,13 @@ router.post("/sale", async (req, res) => {
   // res.json(req.body); //returns data on the browser in json format
 });
 //function to format date
-function formatDate(date) {
-  return date.toISOString().split("T")[0];
-}
+// function formatDate(date) {
+//   return date.toISOString().split("T")[0];
+// }
 
 
 //Get sales from the Database
-router.get("/saleList", async (req, res) => {
+router.get("/salesList", async (req, res) => {
   try {
 
     const saleItems = await Sale.find().sort({ $natural: -1 });
@@ -114,7 +114,7 @@ router.get("/receipt/:id", async (req, res) => {
       title: "Sale Receipt"
      });
   } catch (err) {
-    res.status(400).send("Unable to item sale in the database");
+    res.status(400).send("Unable to find sale in the database");
   }
 });
 

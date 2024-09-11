@@ -85,7 +85,7 @@ table#stock-table(action="stock")
               input(type="hidden", placeholder="", name="id", value=sale._id)
               button#delete_button(type='submit') Delete 
           td 
-            button#update-button(href='/receipt/'+sale._id) Receipt 
+            a#update-button(href='/receipt/'+sale._id) Receipt 
       else 
           p No sale yet 
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')

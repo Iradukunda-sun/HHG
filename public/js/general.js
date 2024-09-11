@@ -148,4 +148,26 @@ function editUser(id) {
 //   }
 // });
 
+router.post("/sale", async (req, res) => {
+  try {
+    const mySale = new Sale(req.body);
+    await mySale.save();
+
+    // Update tonnage in Procurement model
+    const saleData = req.body; // assume saleData contains the sale details (e.g., cropName, quantitySold)
+    const procurementToUpdate = await Procurement.findOne({ cropName: saleData.cropName });
+    if (procurementToUpdate) {
+      procurementToUpdate.tonnage -= saleData.quantitySold;
+      await procurementToUpdate.save();
+    } else {
+      console.log(`No procurement found for crop ${saleData.cropName}`);
+    }
+
+    res.status(201).send("Sale created successfully!");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error creating sale");
+  }
+});
+
 // // ... other sale routes ...
