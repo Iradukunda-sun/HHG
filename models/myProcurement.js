@@ -15,7 +15,7 @@ const procurementSchema = new mongoose.Schema({
     },
     tonnage: {
         type: Number,
-        required: true
+        
     },
     cost: {
         type: Number,

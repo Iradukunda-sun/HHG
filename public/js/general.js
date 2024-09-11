@@ -98,3 +98,54 @@ function editUser(id) {
   if (user) {
       document.getElementById('username').value = user.username;
       document.getElementById('role').value}
+
+
+      // router.post("/sale", async (req, res) => {
+      //   try {
+      //     const saleData = req.body; // assume saleData contains the sale details (e.g., cropName, quantitySold)
+      //     const updateTonnage = await Procurement.aggregate([
+      //       {
+      //         $match: { cropName: saleData.cropName }
+      //       },
+      //       {
+      //         $inc: { tonnage: -saleData.quantitySold } // decrement tonnage by the sold quantity
+      //       }
+      //     ]);
+      //     res.redirect("/stock"); // redirect to the stock page
+      //   } catch (err) {
+      //     res.status(400).send("Unable to update tonnage in the database");
+      //   }
+      // });
+
+
+
+
+//       // Routes for making sale
+// router.get("/sale", (req, res) => {
+//   res.render("sale", { title: "Sales" });
+// });
+
+// router.post("/sale", async (req, res) => {
+//   try {
+//     const mySale = new Sale(req.body);
+//     await mySale.save();
+
+//     // Update tonnage in Procurement model
+//     const saleData = req.body; // assume saleData contains the sale details (e.g., cropName, quantitySold)
+//     const updateTonnage = await Procurement.aggregate([
+//       {
+//         $match: { cropName: saleData.cropName }
+//       },
+//       {
+//         $inc: { tonnage: -saleData.quantitySold } // decrement tonnage by the sold quantity
+//       }
+//     ]);
+
+//     res.redirect('/salesList');
+//   } catch (error) {
+//     res.status(404).send("Unable to save sale")
+//     console.log("Error saving sale", error);
+//   }
+// });
+
+// // ... other sale routes ...

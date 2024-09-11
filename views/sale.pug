@@ -48,7 +48,7 @@ head
     margin: 20px 20px;
     border: none;
     border-radius: 10px;
-    background-color: #c0c4ca;
+    background-color: #572150;
     color: #fff;
     cursor: pointer;
     }
@@ -58,6 +58,20 @@ head
     }
     h2 {
     text-align: center;
+    }
+    #back-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    }
+
+    #back-button svg {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #back-button:hover svg {
+      transform: translateX(-2px);
     }
 nav.navbar.navbar-expand-lg.bg-body-tertiary
   .container-fluid
@@ -70,7 +84,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
         li.nav-item
           a.nav-link.active(aria-current='page' href='/dashboard2') Dashboard
         li.nav-item
-          a.nav-link(href='#')  Stock Status
+          a.nav-link(href='/stock')  Stock Status
         //
           <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
@@ -96,8 +110,8 @@ form(action='/sale' method='post')
         option(value='g-nuts' type='text' name='cropName') G-nuts
         option(value='rice' type='text' name='cropName') Rice
         option(value='soy' type='text' name='cropName') Soy beans
-     tr
-      td Tonnage Sold: (Kgs)
+    tr
+      td Tonnage Sold: (tons)
       td
         input#tonnage(type='number' name='tonnage')
     br
@@ -129,3 +143,5 @@ form(action='/sale' method='post')
   a(href='#')
     button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
+script(src='/js/stock.js')
+script(src='/js/salevalid.js')

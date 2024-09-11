@@ -108,9 +108,9 @@ router.get("/stock",  async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
-            // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
-            totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
+            // totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
+            // // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
+            // totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
         }
       ])
@@ -121,8 +121,8 @@ router.get("/stock",  async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } },
-            totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
+            // totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } },
+            // totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
 
 
           }
@@ -134,8 +134,8 @@ router.get("/stock",  async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, 
-            totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
+            // totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, 
+            // totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
         }
       ])
@@ -146,9 +146,9 @@ router.get("/stock",  async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
-            // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
-            totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
+            // totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
+            // // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
+            // totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
         }
       ])
@@ -159,9 +159,9 @@ router.get("/stock",  async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
-            // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
-            totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
+            // totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
+            // // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
+            // totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
         }
       ])
@@ -172,9 +172,9 @@ router.get("/stock",  async (req, res) => {
           $group: {
             _id: "$all",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
-            // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
-            totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
+            // totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } }, // or as below
+            // // totalExpense: { $sum: { $multiply: [ "$produceCost", "$tonnage" ]}},
+            // totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
         }
       ])
@@ -186,8 +186,8 @@ router.get("/stock",  async (req, res) => {
           $group: {
             _id: "$cropName",
             stockQuantity: { $sum: "$tonnage" },
-            totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } },
-            totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
+            // totalExpense: { $sum: { $multiply: ["$cost", "$tonnage"] } },
+            // totalProjectedRevenue: { $sum: { $multiply: ["$saleprice", "$tonnage"] } },
           }
         }
       ])

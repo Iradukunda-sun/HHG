@@ -47,10 +47,10 @@ head
       //
         </a>
         </li>
-      li.sidebar-list-item
-        a(href='/data' target='_blank')
-          span.material-icons-outlined groups
-          |  User Management
+      //- li.sidebar-list-item
+      //-   a(href='/data' target='_blank')
+      //-     span.material-icons-outlined groups
+      //-     |  User Management
       //- li.sidebar-list-item
       //-   a(href='/produceList' target='_blank')
       //-     span.material-icons-outlined fact_check
@@ -89,9 +89,10 @@ head
           button(type='button') ADD
       .card
         .card-inner
-          h3 NOTIFICATIONS
+          h3  USERS
           span.material-icons-outlined notification_important
-        h1 56
+        a(href='/data')
+          button(type='button') VIEW
     .charts
       .charts-card
         h2.chart-title Our Products
