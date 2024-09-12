@@ -6,6 +6,11 @@ head
   link(rel='icon' href='/img/logo7.png')
   style.
     body {
+    background-image: url(/img/landing2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -47,10 +52,16 @@ head
     .form-group select {
     height: 45px;
     }
+    .buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    }
     .btn {
     width: 100%;
     padding: 10px;
-    background-color: #228B22;
+    background-color: #532a5e;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -103,4 +114,6 @@ head
       button.btn(type='submit') Sign Up
   p
     | Already have an account? 
-    a(href='/login') log In
+    a(href='/login') Login
+  .buttons
+    a.btn(href='/landing') Log out

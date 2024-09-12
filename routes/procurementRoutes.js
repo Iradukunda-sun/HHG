@@ -225,7 +225,7 @@ router.get("/stock",  async (req, res) => {
 
 
 
-// // delete Produce
+// delete Produce
 router.post("/deleteProduce", async (req, res) => {
   try {
     await Procurement.deleteOne({ _id: req.body.id });
@@ -234,5 +234,7 @@ router.post("/deleteProduce", async (req, res) => {
     res.status(400).send("Unable to delete item in the database");
   }
 });
+
+
 
 module.exports = router;

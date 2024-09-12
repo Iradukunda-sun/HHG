@@ -41,24 +41,40 @@ head
     color: #fff;
     cursor: pointer;
     }
+    #back-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    }
+
+    #back-button svg {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #back-button:hover svg {
+      transform: translateX(-2px);
+    }
   nav.navbar.navbar-expand-lg.bg-body-tertiary
-  .container-fluid
-    a.navbar-brand(href='#')
-      strong HAPPY HOE GROCERIES
-    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    #navbarNav.collapse.navbar-collapse
-      ul.navbar-nav
-        li.nav-item
-          a.nav-link.active(aria-current='page' href='/dashboard1') Dashboard
-        li.nav-item
-          a.nav-link(href='/stock')  Stock Status
-        li.nav-item
-          a.nav-link(href='/salesList')  Sales Records
-        li.nav-item
-          a.nav-link(href='/creditList')  Credit Records
-        
+    .container-fluid
+      a.navbar-brand(href='#')
+        strong HAPPY HOE GROCERIES
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNav.collapse.navbar-collapse
+        ul.navbar-nav
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='/dashboard1') Dashboard
+          li.nav-item
+            a.nav-link(href='/stock')  Stock Status
+          li.nav-item
+            a.nav-link(href='/salesList')  Sales Records
+          li.nav-item
+            a.nav-link(href='/creditList')  Credit Records
           
+button#back-button(title='Go back')
+  svg(width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2')
+    path(d='M15 19l-7-7 7-7')         
 h1 Procurement
 table#stock-table(action="stock")
   thead
@@ -89,4 +105,5 @@ table#stock-table(action="stock")
       else 
           p No produce yet 
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
+script(src='/js/stock.js')
 

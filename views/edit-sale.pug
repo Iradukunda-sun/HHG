@@ -56,6 +56,20 @@ head
     button[type="reset"]:hover {
     background-color: #0caa88;
     }
+    #back-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    }
+
+    #back-button svg {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #back-button:hover svg {
+      transform: translateX(-2px);
+    }
     h2 {
     text-align: center;
     }
@@ -70,7 +84,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
         li.nav-item
           a.nav-link.active(aria-current='page' href='#') Dashboard
         li.nav-item
-          a.nav-link(href='#')  Stock Status
+          a.nav-link(href='/stock')  Stock Status
         // 
           <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
@@ -79,6 +93,9 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
+button#back-button(title='Go back')
+  svg(width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2')
+    path(d='M15 19l-7-7 7-7')         
 form(action='/updateSale?id='+sale._id method='POST' name= 'editSale' )
   h2 ADD SALE
   br

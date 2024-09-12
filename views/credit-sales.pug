@@ -58,6 +58,20 @@ head
     h2 {
     text-align: center;
     }
+    #back-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    }
+
+    #back-button svg {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #back-button:hover svg {
+      transform: translateX(-2px);
+    }
 nav.navbar.navbar-expand-lg.bg-body-tertiary
   .container-fluid
     a.navbar-brand(href='#')
@@ -78,6 +92,9 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
+button#back-button(title='Go back')
+  svg(width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2')
+    path(d='M15 19l-7-7 7-7') 
 form(action='/credit' method='post')
   h2 ADD CREDIT SALE
   table
@@ -133,7 +150,8 @@ form(action='/credit' method='post')
       td
         input#date(type='date' name='date')
   button#save_button(type='submit') Save
-  a(href='./dashboardm')
+  a(href='/creditList')
   button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
 script(src='/js/creditvalid.js')
+script(src='/js/stock.js')

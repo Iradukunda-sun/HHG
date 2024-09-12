@@ -55,6 +55,20 @@ head
     button[type="reset"]:hover {
     background-color: #3e8e41;
     }
+    #back-button {
+    background-color: transparent;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    }
+
+    #back-button svg {
+      transition: transform 0.2s ease-in-out;
+    }
+
+    #back-button:hover svg {
+      transform: translateX(-2px);
+    }
     h2 {
     text-align: center;
     }
@@ -78,6 +92,9 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
           <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">Disabled</a>
           </li>
+button#back-button(title='Go back')
+  svg(width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2')
+    path(d='M15 19l-7-7 7-7')
 form(action='/updateCredit?id='+credit._id method='POST' name= 'editCredit' )
   h2  CREDIT SALES
   table
@@ -136,3 +153,4 @@ form(action='/updateCredit?id='+credit._id method='POST' name= 'editCredit' )
   button#cancel_button(type='reset') Cancel
 script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
 script(src='/js/creditvalid.js')
+script(src='/js/stock.js')
