@@ -8,12 +8,12 @@
 //     { id: 6, name: "Soy-beans", type: "seed", stock:23, branch: "Maganjo" },
 //     // ...
 //   ];
-  
+
 //   const lowStockThreshold = 5; // tons
-  
+
 //   const stockTable = document.getElementById("stock-table");
 //   const stockDataContainer = document.getElementById("stock-data");
-  
+
 //   stockData.forEach((item) => {
 //     const row = document.createElement("tr");
 //     row.innerHTML = `
@@ -22,14 +22,14 @@
 //       <td>${item.stock} tons</td>
 //       <td>${item.branch}</td>
 //     `;
-  
+
 //     if (item.stock <= lowStockThreshold) {
 //       row.classList.add("low-stock");
 //     }
-  
+
 //     stockDataContainer.appendChild(row);
 //   });
-  
+
 //   // add event listener to update stock levels and alert for low stock
 //   stockTable.addEventListener("DOMSubtreeModified", () => {
 //     const lowStockRows = stockTable.querySelectorAll("tr.low-stock");

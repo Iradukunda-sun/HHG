@@ -24,7 +24,7 @@ const barChartOptions = {
   series: [
     {
       data: [ 
-        10, 8, 6, 4, 2
+        600, 300, 700, 560, 210
         // totalbeans.stockQuantity,
         // totalmaize.stockQuantity,
         // totalcowpeas.stockQuantity,
@@ -144,7 +144,7 @@ barChart.render();
 const areaChartOptions = {
   series: [
     {
-      name: 'Purchase Orders',
+      name: 'Stock Input',
       data: [31, 40, 28, 51, 42, 109, 100],
     },
     {
@@ -162,7 +162,7 @@ const areaChartOptions = {
     },
   },
   colors: ['#00ab57', '#d50000'],
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+  labels: ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
   dataLabels: {
     enabled: false,
   },
@@ -223,7 +223,7 @@ const areaChartOptions = {
   yaxis: [
     {
       title: {
-        text: 'Purchase Orders',
+        text: 'Stock Input',
         style: {
           color: '#f5f7ff',
         },

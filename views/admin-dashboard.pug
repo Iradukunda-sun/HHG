@@ -47,18 +47,18 @@ head
       //
         </a>
         </li>
-      li.sidebar-list-item
-        a(href='/data' target='_blank')
-          span.material-icons-outlined groups
-          |  User Management
-      li.sidebar-list-item
-        a(href='/produceList' target='_blank')
-          span.material-icons-outlined fact_check
-          |  Procurement Records
-      li.sidebar-list-item
-        a(href='#' target='_blank')
-          span.material-icons-outlined poll
-          |  Reports
+      //- li.sidebar-list-item
+      //-   a(href='/data' target='')
+      //-     span.material-icons-outlined groups
+      //-     |  User Management
+      //- li.sidebar-list-item
+      //-   a(href='/produceList' target='')
+      //-     span.material-icons-outlined fact_check
+      //-     |  Procurement Records
+      //- li.sidebar-list-item
+      //-   a(href='#' target='_blank')
+      //-     span.material-icons-outlined poll
+      //-     |  Reports
       li.sidebar-list-item
         a(href='/landing' target='_blank')
           span
@@ -79,19 +79,20 @@ head
         .card-inner
           h3 SALES
           span.material-icons-outlined category
-        a(href='/saleList')
+        a(href='/salesList')
           button(type='button') VIEW
       .card
         .card-inner
           h3 CREDIT SALES
-          span.material-icons-outlined groups
+          span.material-icons-outlined category
         a(href='/creditList')
           button(type='button') VIEW
       .card
         .card-inner
-          h3 NOTIFICATIONS
-          span.material-icons-outlined notification_important
-        h1 56
+          h3 USERS
+          span.material-icons-outlined groups
+        a(href='/data')
+          button(type='button') VIEW
     .charts
       .charts-card
         h2.chart-title Our Products

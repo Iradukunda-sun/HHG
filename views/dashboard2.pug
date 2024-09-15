@@ -33,11 +33,11 @@ head
       span.material-icons-outlined(onclick='closeSidebar()') close
     ul.sidebar-list
       li.sidebar-list-item
-        a(href='#' target='_blank')
+        a(href='#' target='')
           span.material-icons-outlined dashboard
           |  Dashboard
       li.sidebar-list-item
-        a(href='/stock' target='_blank')
+        a(href='/stock')
           span.material-icons-outlined inventory_2
           |  Inventory
       //
@@ -84,13 +84,14 @@ head
       .card
         .card-inner
           h3 CREDIT SALES
-          span.material-icons-outlined groups
-        a(href='/credit')
+          span.material-icons-outlined category
+        a(href='/sale')
           button(type='button') ADD
       .card
         .card-inner
           h3  USERS
-          span.material-icons-outlined notification_important
+          span.material-icons-outlined groups
+        a(href='/credit')
         a(href='/data')
           button(type='button') VIEW
     .charts

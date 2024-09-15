@@ -1,13 +1,16 @@
 extends layout1 
 block content 
-  section.lib 
-    .container 
-      h2 Thank you for shopping with us 
-      p Produce Name : #{sale.cropName.cropName}
-      p Tonnage  : #{sale.tonnage}
-      p Amount Paid : #{sale.amountPaid}
-      p Buyer's Name : #{sale.buyersName}
-      p Sales Agent : #{sale.agentName}
-      p Date of Sale : #{moment(sale.date)}
-      p 
-        a(href='/salesList') Back
+  .container.d-flex.justify-content-center.align-items-center.min-vh-100 
+    .row.justify-content-center 
+      .col-md-6 
+        .add-book-form.p-4 
+          h2.text-center.mb-4 Receipt
+            h5 Thank you for shopping with us 
+            p Produce Name : #{sale.cropName.cropName}
+            p Tonnage  : #{sale.tonnage}
+            p Amount Paid : #{sale.amountPaid}
+            p Buyer's Name : #{sale.buyersName}
+            p Sales Agent : #{sale.agentName}
+            p Date of Sale : #{moment(sale.date, 'YYYY-MM-DD').format('DD-MM-YYYY')}
+            p 
+              a(href='/salesList') Back
