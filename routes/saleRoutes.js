@@ -52,6 +52,21 @@ router.get("/salesList", async (req, res) => {
 }
 });
 
+
+//generating a receipt
+
+router.get("/hhgreceipt/:id", async (req, res) => {
+  try {
+    const item = await Sale.findOne({ _id: req.params.id });
+    res.render("receipt", {
+      title: "Receipt",
+      sale: item,
+    });
+  } catch (err) {
+    res.status(400).send("Unable to find item in the database");
+  }
+});
+
 // get sale update form
 router.get("/updateSale/:id", async (req, res) => {
   try {
@@ -61,7 +76,7 @@ router.get("/updateSale/:id", async (req, res) => {
       sale: item,
     });
   } catch (err) {
-    res.status(400).send("Unable to find user in the database");
+    res.status(400).send("Unable to find item in the database");
   }
 });
 
@@ -99,24 +114,7 @@ router.post("/deleteSale", async (req, res) => {
   }
 });
 
-//generating a receipt
 
-router.get("/receipt/:id", async (req, res) => {
-  try {
-    const sale = await Sale.findOne({ _id: req.params.id })
-    .populate("cropName","cropName"
-
-    )
-    const formattedDate = formatDate(sale.saledate);
-    res.render("receipt", { 
-      sale,
-      formattedDate,
-      title: "Sale Receipt"
-     });
-  } catch (err) {
-    res.status(400).send("Unable to find sale in the database");
-  }
-});
 
 module.exports = router;
 

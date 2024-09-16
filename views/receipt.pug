@@ -1,16 +1,77 @@
-extends layout1 
-block content 
-  .container.d-flex.justify-content-center.align-items-center.min-vh-100 
-    .row.justify-content-center 
-      .col-md-6 
-        .add-book-form.p-4 
-          h2.text-center.mb-4 Receipt
-            h5 Thank you for shopping with us 
-            p Produce Name : #{sale.cropName.cropName}
-            p Tonnage  : #{sale.tonnage}
-            p Amount Paid : #{sale.amountPaid}
-            p Buyer's Name : #{sale.buyersName}
-            p Sales Agent : #{sale.agentName}
-            p Date of Sale : #{moment(sale.date, 'YYYY-MM-DD').format('DD-MM-YYYY')}
-            p 
-              a(href='/salesList') Back
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title Groceries
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700')
+    link(rel='stylesheet' href='/css/fontawesome.min.css')
+    link(rel='stylesheet' href='/jquery-ui-datepicker/jquery-ui.min.css' type='text/css')
+    link(rel='stylesheet' href='/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/css/templatemo-style.css')
+    link(rel='stylesheet' href='/css/receipt.css')
+  body
+    button#back-button(title='Go back')
+      svg(width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2')
+        path(d='M15 19l-7-7 7-7')             
+
+    .container.tm-mt-big.tm-mb-big
+      .col-xl-9.col-lg-10.col-md-12.col-sm-12.mx-auto
+        .containers
+          .header
+            h1 Happy Hoe Grocery Ltd 
+            p P.O BOX 5324 
+            p Kampala 
+            h3 Thank you for shopping with us 
+
+
+            br
+            br
+            h4   RECEIPT
+
+
+          table
+            tr
+              th.table-left Date of sale:
+              td.table-right #{moment(sale.date).format('DD-MM-YYYY')}
+            tr
+              th.table-left Tonnage (kg):
+              td.table-right #{sale.tonnage}
+            tr
+              th.table-left Amount Paid (UGX):
+              td.table-right #{sale.amountPaid}
+            tr
+              th.table-left Produce Name:
+              td.table-right #{sale.cropName}
+            tr
+              th.table-left Buyer&apos;s Name:
+              td.table-right #{sale.buyersName}
+            tr
+              th.table-left Sales Agent&apos;s Name:
+              td.table-right #{sale.agentName}
+          
+        br
+        br
+    button#btn-print(type='button') Print Receipt
+
+    footer.tm-footer.row.tm-mt-small
+      .col-12.font-weight-light
+        p.text-center.text-white.mb-0.px-4.small
+          | Copyright &copy;
+          b 2024
+          | All rights reserved.
+    script(src='js/jquery-3.3.1.min.js')
+    script(src='jquery-ui-datepicker/jquery-ui.min.js')
+    script(src='/js/bootstrap.min.js')
+    script.
+      $(function() {
+        $("#expire_date").datepicker();
+      });
+
+    // Print Receipt Script
+    script.
+      document.getElementById('btn-print').addEventListener('click', function() {
+        window.print();
+      });
+script(src='/js/stock.js')

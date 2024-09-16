@@ -15,7 +15,7 @@ html(lang="en")
       #navbarNav.collapse.navbar-collapse
         ul.navbar-nav
           li.nav-item
-            a.nav-link.active(aria-current='page' href='/') Dashboard
+            a.nav-link.active(aria-current='page' href='/landing') Log out
           li.nav-item
             a.nav-link(href='/stock')  Stock Status
           //
@@ -26,34 +26,33 @@ html(lang="en")
             <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
-button#back-button(title='Go back')
+  button#back-button(title='Go back')
   svg(width='24' height='24' viewbox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2')
-    path(d='M15 19l-7-7 7-7')            
-    h1 All Users List
-    table
-      thead
+    path(d='M15 19l-7-7 7-7')          
+  h1 All Users List
+  table
+    thead
+      tr
+        th  Name
+        th Branch
+        th Role
+        th Action
+    tbody
+      if signins.length 
+      each signin in signins
         tr
-          th  Name
+          td #{signin.theName}
           
-          th Branch
-          th Role
-          th Action
-      tbody
-        if signins.length 
-        each signin in signins
-          tr
-            td #{signin.theName}
-           
-            td #{signin.branch}
-            td #{signin.role}
+          td #{signin.branch}
+          td #{signin.role}
+          
             
-             
-            td 
-              form(method ="post" action = '/deleteUser') 
-                input(type="hidden", placeholder="", name="id", value=signin._id)
-                button#delete_button(type='submit') Delete 
-        else 
-          p no users signed up yet
+          td 
+            form(method ="post" action = '/deleteUser') 
+              input(type="hidden", placeholder="", name="id", value=signin._id)
+              button#delete_button(type='submit') Delete 
+      else 
+        p no users signed up yet
 
 
 
