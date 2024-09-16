@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const connectEnsureLogin = require('connect-ensure-login');
+const connectEnsureLogin = require('connect-ensure-login');
 
 // Import models
 const Sale = require('../models/mySales');
@@ -11,7 +11,7 @@ const Sale = require('../models/mySales');
 
 
 //Routes for making sale
-router.get("/sale", (req, res) => {
+router.get("/sale",    (req, res) => {
   res.render("sale", { title: "Sales" });
 });
 
@@ -35,7 +35,7 @@ router.post("/sale", async (req, res) => {
 
 
 //Get sales from the Database
-router.get("/salesList", async (req, res) => {
+router.get("/salesList",   async (req, res) => {
   try {
 
     const saleItems = await Sale.find().sort({ $natural: -1 });
@@ -55,7 +55,7 @@ router.get("/salesList", async (req, res) => {
 
 //generating a receipt
 
-router.get("/hhgreceipt/:id", async (req, res) => {
+router.get("/hhgreceipt/:id",   async (req, res) => {
   try {
     const item = await Sale.findOne({ _id: req.params.id });
     res.render("receipt", {

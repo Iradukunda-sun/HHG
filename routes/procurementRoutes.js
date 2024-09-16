@@ -6,11 +6,11 @@ const connectEnsureLogin = require('connect-ensure-login');
 const Procurement = require('../models/myProcurement');
 const Sale = require('../models/mySales');
 
-router.get("/procurement", (req, res) => {
+router.get("/procurement",   (req, res) => {
   res.render("procurement", { title: "Procurement" });
 });
 
-router.post("/procurement", async (req, res) => {
+router.post("/procurement",  async (req, res) => {
   try {
     const myProduce = new Procurement(req.body);
     await myProduce.save();
@@ -25,8 +25,8 @@ router.post("/procurement", async (req, res) => {
 });
 
 
-//Get users from the Database
-router.get("/produceList", async (req, res) => {
+//Get produce from the Database
+router.get("/produceList",   connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
   try {
 
     const produceItems = await Procurement.find().sort({ $natural: -1 });
@@ -44,7 +44,7 @@ router.get("/produceList", async (req, res) => {
 });
 
 // get produce update form
-router.get("/updateProduce/:id", async (req, res) => {
+router.get("/updateProduce/:id",  async (req, res) => {
   try {
     const item = await Procurement.findOne({ _id: req.params.id });
     res.render("edit-produce", {
@@ -71,7 +71,7 @@ router.get("/updateProduce/:id", async (req, res) => {
 
 // post updated produce
 
-router.post("/updateProduce", async (req, res) => {
+router.post("/updateProduce",   async (req, res) => {
   try {
     await Procurement.findOneAndUpdate({ _id: req.query.id }, req.body);
     res.redirect("/produceList");
@@ -88,7 +88,7 @@ router.post("/updateProduce", async (req, res) => {
 
 // AGGREGATIONS
 
-router.get("/stock", async (req, res) => {
+router.get("/stock",    async (req, res) => {
   // req.session.user = req.user;
   // if (req.user.role == 'manager') {
   try {

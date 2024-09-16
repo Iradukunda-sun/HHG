@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const connectEnsureLogin = require('connect-ensure-login');
 
 // Import models
 const Credit = require('../models/creditSales');
 
-router.get("/credit", (req, res) => {
+router.get("/credit",  (req, res) => {
     res.render("credit-sales");
   });
   router.post("/credit", async (req, res) => {
@@ -23,7 +24,7 @@ router.get("/credit", (req, res) => {
   
   
   //Get users from the Database
-  router.get("/creditList", async (req, res) => {
+  router.get("/creditList",   connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
     try {
   
       const creditItems = await Credit.find().sort({ $natural: -1 });
@@ -41,7 +42,7 @@ router.get("/credit", (req, res) => {
   });
   
   // get produce update form
-  router.get("/updateCredit/:id", async (req, res) => {
+  router.get("/updateCredit/:id",  async (req, res) => {
     try {
       const item = await Credit.findOne({ _id: req.params.id });
       res.render("edit-credit", {
@@ -55,7 +56,7 @@ router.get("/credit", (req, res) => {
   
   // post updated produce
   
-  router.post("/updateCredit", async (req, res) => {
+  router.post("/updateCredit",  async (req, res) => {
     try {
       await Credit.findOneAndUpdate({ _id: req.query.id }, req.body);
       res.redirect("/creditList");
