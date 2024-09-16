@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title Users Page
+    title HHG
     link(rel="stylesheet" href="/css/all-users.css")
     link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')     
     link(rel='icon' href='/img/logo7.png')
@@ -33,7 +33,7 @@ html(lang="en")
   table
     thead
       tr
-        th  Name
+        th Name
         th Branch
         th Role
         th Action
@@ -42,11 +42,8 @@ html(lang="en")
       each signin in signins
         tr
           td #{signin.theName}
-          
           td #{signin.branch}
           td #{signin.role}
-          
-            
           td 
             form(method ="post" action = '/deleteUser') 
               input(type="hidden", placeholder="", name="id", value=signin._id)

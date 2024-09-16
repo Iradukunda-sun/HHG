@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Groceries
+  title HHG
   link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')
   link(rel='icon' href='/img/logo7.png')
   style.
@@ -100,7 +100,6 @@ form(action='/updateSale?id='+sale._id method='POST' name= 'editSale' )
   h2 ADD SALE
   br
   table
-    br
     tr
       select.form-select(aria-label='Default select example')
         option(selected='') Select Product
@@ -111,7 +110,13 @@ form(action='/updateSale?id='+sale._id method='POST' name= 'editSale' )
         option(value='rice'  selected = sale.cropName === "rice") Rice
         option(value='soy'  selected = sale.cropName === "soy") Soy beans
     tr
-      td Tonnage Sold:
+      select.form-select(aria-label='Default select example')
+        option(selected='') Select Branch
+        option(value='maganjo' selected = produce.branch_name === maganjo) Maganjo
+        option(value='legume' selected = produce.branch_name === matugga) Matugga
+
+    tr
+      td Tonnage Sold (tons):
       td
         input#tonnage(type='number' name='tonnage' value = sale.tonnage )
     br

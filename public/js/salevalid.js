@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   
       // Tonnage should be numeric, not empty, and at least 3 digits
-      if (tonnage === '' || isNaN(tonnage) || tonnage.length < 3) {
+      if (tonnage === '' || isNaN(tonnage) || tonnage.length < 2) {
         errorMessage += 'Please enter a valid tonnage (at least 3 digits).\n';
         isValid = false;
       }

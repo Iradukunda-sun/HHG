@@ -2,7 +2,7 @@ doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  title Groceries
+  title HHG
   link(rel='icon' href='/img/logo7.png')
   style.
     css
@@ -10,7 +10,7 @@ head
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    bactonsround-color: #f9f9f9;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
@@ -20,12 +20,12 @@ head
     grid-gap: 20px;
     }
     .card {
-    background-color: #fff;
+    bactonsround-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    transition: background-color 0.3s ease;
+    transition: bactonsround-color 0.3s ease;
     }
     .card h2 {
     margin-top: 0;
@@ -36,17 +36,17 @@ head
     color: #666;
     }
      #back-button {
-    background-color: transparent;
+    bactonsround-color: transparent;
     border: none;
     padding: 8px;
     cursor: pointer;
     }
 
-    #back-button svg {
+     #back-button svg {
       transition: transform 0.2s ease-in-out;
     }
 
-    #back-button:hover svg {
+     #back-button:hover svg {
       transform: translateX(-2px);
     }
     h1 {
@@ -62,25 +62,25 @@ head
     .card
       h2 Beans
       img(src='/img/redbeans.png' alt='redbeans')
-      p Current Stock: #{new Intl.NumberFormat().format(totalbeans.stockQuantity - soldBeans)} Kg
+      p Current Stock: #{new Intl.NumberFormat().format(totalbeans.stockQuantity - soldBeans.totalSold)} tons
     .card
       h2 Maize
       img(src='/img/maize.png' alt='maize')
-      p Current Stock: #{new Intl.NumberFormat().format(totalmaize.stockQuantity)} Kg
+      p Current Stock: #{new Intl.NumberFormat().format(totalmaize.stockQuantity - soldMaize.totalSold )} tons
     .card
       h2 Rice
       img(src='/img/rice.png' alt='rice')
-      p Current Stock: #{new Intl.NumberFormat().format(totalrice.stockQuantity)} Kg
+      p Current Stock: #{new Intl.NumberFormat().format(totalrice.stockQuantity - soldRice.totalSold)} tons
     .card
       h2 Soybeans
       img(src='/img/soy.png' alt='soybeans')
-      p Current Stock: #{new Intl.NumberFormat().format(totalsoy.stockQuantity)} Kg
+      p Current Stock: #{new Intl.NumberFormat().format(totalsoy.stockQuantity - soldSoy.totalSold)} tons
     .card
       h2 Cow Peas
       img(src='/img/cowpeas.png' alt='cowpeas')
-      p Current Stock: #{new Intl.NumberFormat().format(totalcowpeas.stockQuantity)} Kg
+      p Current Stock: #{new Intl.NumberFormat().format(totalcowpeas.stockQuantity - soldCowpeas.totalSold)} tons
     .card
       h2 Gnuts
       img(src='/img/g-nuts.png' alt='gnuts')
-      p Current Stock: #{new Intl.NumberFormat().format(totalgnuts.stockQuantity)} Kg
+      p Current Stock: #{new Intl.NumberFormat().format(totalgnuts.stockQuantity - soldGnuts.totalSold)} tons
 script(src='/js/stock.js')
