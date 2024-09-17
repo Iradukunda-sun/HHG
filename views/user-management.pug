@@ -2,9 +2,9 @@ doctype html
 html(lang="en")
   head
     title HHG
-    link(rel="stylesheet" href="/css/all-users.css")
     link(rel='stylesheet' href='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.css')     
     link(rel='icon' href='/img/logo7.png')
+    link(rel="stylesheet" href="/css/all-users.css")
   body
   nav.navbar.navbar-expand-lg.bg-body-tertiary
     .container-fluid
@@ -15,9 +15,9 @@ html(lang="en")
       #navbarNav.collapse.navbar-collapse
         ul.navbar-nav
           li.nav-item
-            a.nav-link.active(aria-current='page' href='/landing') Log out
+            a.nav-link.active(aria-current='page' href='/register') Add User
           li.nav-item
-            a.nav-link(href='/stock')  Stock Status
+            a.nav-link(href='/landing')  Log out
           //
             <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
@@ -50,8 +50,6 @@ html(lang="en")
               button#delete_button(type='submit') Delete 
       else 
         p no users signed up yet
-
-
-
-script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
 script(src='/js/stock.js')
+script(src='/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.js')
+

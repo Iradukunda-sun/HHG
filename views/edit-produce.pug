@@ -113,10 +113,10 @@ form(action='/updateProduce?id='+produce._id method='POST' name= 'editProduce' )
         <td><input type="text" id="produce_name" name="produce_name" required></td>
     br
     tr
-      select.form-select(aria-label='Default select example')
+      select.form-select(aria-label='Default select example' type='text' name='Type')
         option(selected='') Select Type
-        option(value='grain') Grain
-        option(value='legume') Legume
+        option(value='grain' selected = credit.Type === "grain") Grain
+        option(value='legume' selected = credit.Type === "legume") Legume
     tr
       td Date:
       td
@@ -126,13 +126,13 @@ form(action='/updateProduce?id='+produce._id method='POST' name= 'editProduce' )
       td
         input#tonnage(type='number' name='tonnage' value = produce.tonnage )
     tr
-      td Cost:
+      td Cost  (UGX):
       td
         input#cost(type='number' name='cost' value = produce.cost )
     tr
       td Dealer&apos;s Name:
       td
-        input#dealers_name(type='text' name='dealers_name' )
+        input#dealers_name(type='text' name='dealers_name'  value = produce.dealers_name )
     tr
       select.form-select(aria-label='Default select example')
         option(selected='') Select Branch
@@ -143,11 +143,11 @@ form(action='/updateProduce?id='+produce._id method='POST' name= 'editProduce' )
     tr
       td Contact Info:
       td
-        input#contact_info(type='text' name='contact_info' )
+        input#contact_info(type='text' name='contact_info'  value = produce.contact_info )
     tr
-      td Price to be sold at (per ton):
+      td Price to be sold at (UGX):
       td
-        input#saleprice(type='number' name='saleprice' )
+        input#saleprice(type='number' name='saleprice'  value = produce.saleprice )
         
   button#save_button(type='submit') Update
 

@@ -33,13 +33,13 @@ head
       span.material-icons-outlined(onclick='closeSidebar()') close
     ul.sidebar-list
       li.sidebar-list-item
-        a(href='#' target='_blank')
+        a(href='/dashboards' target='')
           span.material-icons-outlined dashboard
           |  Dashboard
-      li.sidebar-list-item
-        a(href='/stock' target='')
-          span.material-icons-outlined inventory_2
-          |  Inventory
+      //- li.sidebar-list-item
+      //-   a(href='/stock' target='')
+      //-     span.material-icons-outlined inventory_2
+      //-     |  Inventory
       //
         <li class="sidebar-list-item">
         <a href="#" target="_blank">
@@ -52,15 +52,15 @@ head
         <span class="material-icons-outlined">groups</span> Customers
         </a>
       li.sidebar-list-item
-        a(href='/produceList' target='_blank')
+        a(href='/salesList' target='')
           span.material-icons-outlined fact_check
-          | Procurement Records
+          | Sale Records
       li.sidebar-list-item
-        a(href='#')
-          span.material-icons-outlined poll
-          |  Reports
+        a(href='/creditList')
+          span.material-icons-outlined fact_check
+          |  Credit Records
       li.sidebar-list-item
-        a(href='#' target='_blank')
+        a(href='#' target='')
           span
         a(href='/landing')  
           |  Log out
@@ -90,9 +90,10 @@ head
           button(type='button') ADD
       .card
         .card-inner
-          h3 NOTIFICATIONS
-          span.material-icons-outlined groups
-        h1 56
+          h3 STOCK
+          span.material-icons-outlined inventory_2
+        a(href='/stock')
+          button(type='button') VIEW
     .charts
       .charts-card
         h2.chart-title Top 5 Products

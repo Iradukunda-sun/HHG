@@ -139,8 +139,8 @@ form(action='/updateCredit?id='+credit._id method='POST' name= 'editCredit' )
     tr
       select.form-select(aria-label='Default select example' type='text' name='Type')
         option(selected='') Select Type
-        option(value='grain') Grain
-        option(value='legume') Legume
+        option(value='grain' selected = credit.Type === "grain") Grain
+        option(value='legume' selected = credit.Type === "legume") Legume
     tr
       td Tonnage (tons):
       td

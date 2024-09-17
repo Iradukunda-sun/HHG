@@ -33,13 +33,25 @@ head
       span.material-icons-outlined(onclick='closeSidebar()') close
     ul.sidebar-list
       li.sidebar-list-item
-        a(href='#' target='')
+        a(href='dashboardm' target='')
           span.material-icons-outlined dashboard
           |  Dashboard
       li.sidebar-list-item
         a(href='/stock')
           span.material-icons-outlined inventory_2
           |  Inventory
+      li.sidebar-list-item
+        a(href='/produceList')
+          span.material-icons-outlined fact_check
+          |  Stock records
+      li.sidebar-list-item
+        a(href='/salesList')
+          span.material-icons-outlined fact_check
+          |  Sale records
+      li.sidebar-list-item
+        a(href='/creditList')
+          span.material-icons-outlined fact_check
+          |  Credit Records
       //
         <li class="sidebar-list-item">
         <a href="#" target="_blank">
@@ -55,10 +67,7 @@ head
       //-   a(href='/produceList' target='_blank')
       //-     span.material-icons-outlined fact_check
       //-     |  Procurement Records
-      li.sidebar-list-item
-        a(href='#' target='_blank')
-          span.material-icons-outlined poll
-          |  Reports
+      
       li.sidebar-list-item
         a(href='/landing' target='_blank')
           span
@@ -85,13 +94,12 @@ head
         .card-inner
           h3 CREDIT SALES
           span.material-icons-outlined category
-        a(href='/sale')
+        a(href='/credit')
           button(type='button') ADD
       .card
         .card-inner
           h3  USERS
           span.material-icons-outlined groups
-        a(href='/credit')
         a(href='/data')
           button(type='button') VIEW
     .charts

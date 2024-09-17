@@ -85,8 +85,6 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
         li.nav-item
           a.nav-link(href='/stock')  Stock Status 
         li.nav-item
-          a.nav-link(href='/salesList')  Sale Records
-        li.nav-item
           a.nav-link(href='/landing')  Log out
          
         //
@@ -132,7 +130,7 @@ form(action='/procurement' method='post')
       td
         input#tonnage(type='number' name='tonnage')
     tr
-      td Cost per ton (UGX):
+      td Cost  (UGX):
       td
         input#cost(type='number' name='cost')
     tr
@@ -153,7 +151,7 @@ form(action='/procurement' method='post')
       td
         input#contact_info(type='text' name='contact_info')
     tr
-      td Price to be sold at:
+      td Price to be sold at (UGX):
       td
         input#saleprice(type='number' name='saleprice' )
 

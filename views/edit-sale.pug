@@ -48,7 +48,7 @@ head
     margin: 20px 20px;
     border: none;
     border-radius: 10px;
-    background-color: #c0c4ca;
+    background-color: #3e8e41;
     color: #fff;
     cursor: pointer;
     }
@@ -109,12 +109,6 @@ form(action='/updateSale?id='+sale._id method='POST' name= 'editSale' )
         option(value='g-nuts' selected = sale.cropName === "g-nuts") G-nuts
         option(value='rice'  selected = sale.cropName === "rice") Rice
         option(value='soy'  selected = sale.cropName === "soy") Soy beans
-    tr
-      select.form-select(aria-label='Default select example')
-        option(selected='') Select Branch
-        option(value='maganjo' selected = produce.branch_name === maganjo) Maganjo
-        option(value='legume' selected = produce.branch_name === matugga) Matugga
-
     tr
       td Tonnage Sold (tons):
       td

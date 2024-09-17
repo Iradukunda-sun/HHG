@@ -43,18 +43,17 @@ button[type="submit"] {
     color: #fff;
     cursor: pointer;
 }
-
-#back-button {
+  #back-button {
     background-color: transparent;
     border: none;
     padding: 8px;
     cursor: pointer;
 }
 
-#back-button svg {
+  #back-button svg {
     transition: transform 0.2s ease-in-out;
 }
 
-#back-button:hover svg {
+  #back-button:hover svg {
     transform: translateX(-2px);
 }
